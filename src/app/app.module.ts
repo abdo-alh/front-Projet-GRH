@@ -52,8 +52,12 @@ import { AttestationEmployeeComponent } from './components/attestation/attestati
 import { StageComponent } from './components/stage/stage.component';
 import { StageCreateComponent } from './components/stage/stage-create/stage-create.component';
 import { StageListComponent } from './components/stage/stage-list/stage-list.component';
-import { EquipeItemComponent } from './components/stage/equipe-item/equipe-item.component';
 import { FormsModule } from '@angular/forms';
+import { EquipeitemComponent } from './components/equipeitem/equipeitem.component';
+import { EquipeitemCreateComponent } from './components/equipeitem/equipeitem-create/equipeitem-create.component';
+import { EquipeitemListComponent } from './components/equipeitem/equipeitem-list/equipeitem-list.component';
+
+  import { from } from 'rxjs';
 
 @NgModule({
   imports: [
@@ -90,7 +94,10 @@ import { FormsModule } from '@angular/forms';
     StageComponent,
     StageCreateComponent,
     StageListComponent,
-    EquipeItemComponent,
+    EquipeitemComponent,
+    EquipeitemCreateComponent,
+    EquipeitemListComponent
+   
   ],
   providers: [{
     provide: LocationStrategy,

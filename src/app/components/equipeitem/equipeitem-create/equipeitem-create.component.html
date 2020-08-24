@@ -1,0 +1,38 @@
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <strong>Créer un Stagiaire (Stage)</strong>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="raison">Date</label>
+                <input type="text" [(ngModel)]="equipeItem.dateDebut" class="form-control" id="dateDebut"
+                    placeholder="Entrer Le raison">
+            </div>
+            <div class="form-group">
+                <label for="etat">dateFin</label>
+                <input type="text" [(ngModel)]="equipeItem.dateFin" class="form-control" id="etat" placeholder="Entrer L'état">
+            </div>
+            <!-- <div class="form-group">
+                <label for="encadrant">Encadrant</label>
+                <input type="text" [(ngModel)]="stage.encadrent" class="form-control" id="encadrant" placeholder="Entrer L'encadrant">
+            </div> -->
+            <div class="form-group">
+                <label for="stagiaire">stagiaire</label>
+                <select name="stagiaire" id="stagiaire" [(ngModel)]="equipeItem.stagiaire" class="form-control" #mySelect
+                    (change)='onOptionsSelected(mySelect.value)'>
+                    <option value="">Sélectionnez...</option>
+                    <option *ngFor="let e of stagiaires;" [ngValue]="e">
+                        {{ e.nom }} {{ e.prenom }}
+                    </option>
+                </select>
+            </div>
+            <div class="card-footer">
+                <button type="submit" (click)="save()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>
+                    Save</button>
+                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/.col-->
