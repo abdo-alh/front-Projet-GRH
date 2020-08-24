@@ -1,0 +1,45 @@
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <strong>Créer un employé</strong>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" [(ngModel)]="employee.nom" class="form-control" id="nom" placeholder="Entrer Le nom">
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prenom</label>
+                <input type="text" [(ngModel)]="employee.prenom" class="form-control" id="prenom" placeholder="Entrer Le prenom">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" [(ngModel)]="employee.email" class="form-control" id="email" placeholder="Entrer L'email">
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-8">
+                    <label for="password">Password</label>
+                    <input type="password" [(ngModel)]="employee.password" class="form-control" id="password" placeholder="Entrer le mot de passe">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label for="adresse">Adresse</label>
+                    <input type="text" [(ngModel)]="employee.adresse" class="form-control" id="adresse" placeholder="Entrer l'adresse">
+                </div>
+            </div>
+            <!--/.row-->
+            <div class="form-group">
+                <label for="ville">Ville</label>
+                <input type="text" [(ngModel)]="employee.ville" class="form-control" id="ville" placeholder="Entrer la ville">
+            </div>
+            <div class="form-group">
+                <label for="dateNaissance">Date Naissance</label>
+                <input type="date" [(ngModel)]="employee.datenaissance" class="form-control" id="dateNaissance" placeholder="Entrer la date de naissance">
+            </div>
+            <div class="card-footer">
+                <button type="submit" (click)="save()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save</button>
+                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/.col-->
