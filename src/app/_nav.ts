@@ -46,6 +46,11 @@ export const navItems: INavData[] = [
       }]
   },
   {
+    name: 'Equipe Items',
+    url: '/equipeItems',
+    icon: 'icon-cursor'
+  },
+  {
     name: 'Colors',
     url: '/theme/colors',
     icon: 'icon-drop'

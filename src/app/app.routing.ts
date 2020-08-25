@@ -13,6 +13,7 @@ import { StagiaireComponent } from './components/stagiaire/stagiaire.component';
 import { StageComponent } from './components/stage/stage.component';
 import { AttestationEmployeeComponent } from './components/attestation/attestation-employee/attestation-employee.component';
 import { AttestationStagiaireComponent } from './components/attestation/attestation-stagiaire/attestation-stagiaire.component';
+import { EquipeitemComponent } from './components/equipeitem/equipeitem.component';
 
 export const routes: Routes = [
   {
@@ -78,6 +79,10 @@ export const routes: Routes = [
       {
         path: "attestationStg",
         component: AttestationStagiaireComponent
+      },
+      {
+        path: "equipeItems",
+        component: EquipeitemComponent
       },
       {
         path: 'buttons',
