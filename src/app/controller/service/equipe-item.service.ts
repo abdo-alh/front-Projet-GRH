@@ -29,6 +29,39 @@ export class EquipeItemService {
       });
   }
 
+  public getAllEquipeItems(){
+     return this.http.get<EquipeItem[]>(this.baseUrl+'/');
+  }
+
+  public update() {
+    this.http.put<number>(this.baseUrl + '/update/', this.equipeitem).subscribe(data => {
+      if (data > 0) {
+        const index = this.equipeitems.findIndex(p => p.id === this.equipeitem.id);
+        this.equipeitems[index] = this.equipeitem;
+        this.equipeitem = null;
+      }
+      else {
+        console.log('Erreur modification : ' + data);
+      }
+    });
+  }
+
+  public delete(id, index) {
+    this.http.delete<number>(this.baseUrl + '/delete/id/' + id).subscribe(data => {
+      if (data > 0) {
+        this.equipeitems.splice(index, 1);
+      }
+      else {
+        console.log('Erreur suppression : ' + data);
+      }
+    });
+  }
+  public getAll() {
+    this.http.get<Array<EquipeItem>>(this.baseUrl + '/').subscribe(data => {
+      this.equipeitems = data;
+    });
+  }
+
   get equipeitem(): EquipeItem {
     if (this._equipeitem == null) {
       this._equipeitem = new EquipeItem();

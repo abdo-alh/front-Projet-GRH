@@ -11,13 +11,18 @@ export class EquipeitemCreateComponent implements OnInit {
   constructor(private equipeitemService: EquipeItemService) { }
   ngOnInit(): void {}
 
+  get equipeitem(){
+    return this.equipeitemService.equipeitem;
+  }
+
   public save() {
     if (this.equipeitemService.equipeitem.id != null) {
-      //this.equipeitemService.update();
+      this.equipeitemService.update();
       console.log("error");
     }
     else {
       this.equipeitemService.save();
     }
 }
+
 }
