@@ -35,6 +35,7 @@ export class EquipeitemListComponent implements OnInit {
     e.dateDebut = equipeitem.dateDebut;
     e.dateFin = equipeitem.dateFin;
     e.emCv = equipeitem.emCv;
+    e.dateRecuCv = equipeitem.dateRecuCv;
     e.note = equipeitem.note;
     e.stagiaire = equipeitem.stagiaire;
     return e;

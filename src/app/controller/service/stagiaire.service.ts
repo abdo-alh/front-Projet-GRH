@@ -26,7 +26,7 @@ export class StagiaireService {
   }
 
   public update() {
-    this.http.put<Stagiaire>(this.baseUrl + '/update/', this.stagiaire.id).subscribe(data => {
+    this.http.put<number>(this.baseUrl + '/update/', this.stagiaire).subscribe(data => {
       if (data != null) {
         const index = this.stagiaires.findIndex(p => p.id === this.stagiaire.id);
         this.stagiaires[index] = this.stagiaire;
@@ -47,6 +47,10 @@ export class StagiaireService {
         console.log('Erreur suppression : ' + data);
       }
     });
+  }
+
+  public getAllStagiaires(){
+    return this.http.get<Stagiaire[]>(this.baseUrl+'/');
   }
 
   public getAll() {

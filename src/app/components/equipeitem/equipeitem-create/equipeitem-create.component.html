@@ -6,28 +6,28 @@
         <div class="card-body">
             <div class="form-group">
                 <label for="raison">Date Debut</label>
-                <input type="date" [(ngModel)]="equipeItem.dateDebut" class="form-control" id="dateDebut"
+                <input type="date" [(ngModel)]="equipeitem.dateDebut" class="form-control" id="dateDebut"
                     placeholder="Entrer date de debut stage">
             </div>
             <div class="form-group">
                 <label for="etat">Date Fin</label>
-                <input type="date" [(ngModel)]="equipeItem.dateFin" class="form-control" id="dateFin" placeholder="Entrer date de fin stage">
+                <input type="date" [(ngModel)]="equipeitem.dateFin" class="form-control" id="dateFin" placeholder="Entrer date de fin stage">
             </div>
 
             <div class="form-group">
                 <label for="etat">Upload CV</label>
-                <input type="file" [(ngModel)]="equipeItem.emCv" class="form-control" id="cv" placeholder="upload cv">
+                <input type="file" [(ngModel)]="equipeitem.emCv" class="form-control" id="cv" placeholder="upload cv">
             </div>
 
             
             <div class="form-group">
                 <label for="etat">Date Recu Cv</label>
-                <input type="date" [(ngModel)]="equipeItem.dateRecuCv" class="form-control" id="dateRecuCv" placeholder="date recu cv">
+                <input type="date" [(ngModel)]="equipeitem.dateRecuCv" class="form-control" id="dateRecuCv" placeholder="date recu cv">
             </div>
 
             <div class="form-group">
                 <label for="etat">note</label>
-                <input type="text" [(ngModel)]="equipeItem.note" class="form-control" id="note" placeholder="note">
+                <input type="text" [(ngModel)]="equipeitem.note" class="form-control" id="note" placeholder="note">
             </div>
 
             <!-- <div class="form-group">
@@ -36,11 +36,11 @@
             </div> -->
             <div class="form-group">
                 <label for="stagiaire">Stagiaire</label>
-                <select name="stagiaire" id="stagiaire" [(ngModel)]="equipeItem.stagiaire" class="form-control" #mySelect
+                <select name="stagiaire" id="stagiaire" [(ngModel)]="equipeitem.stagiaire" class="form-control" #mySelect
                     (change)='onOptionsSelected(mySelect.value)'>
                     <option value="">Sélectionnez...</option>
-                    <option *ngFor="let e of stagiaires;" [ngValue]="e">
-                        {{ e.nom }} {{ e.prenom }}
+                    <option *ngFor="let s of stagiaires;" [ngValue]="s">
+                        {{ s.nom }} {{ s.prenom }}
                     </option>
                 </select>
             </div>

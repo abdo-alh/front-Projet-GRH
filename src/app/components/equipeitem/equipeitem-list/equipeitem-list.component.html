@@ -12,8 +12,9 @@
                         <th>Upload Cv</th>
                         <th>Date Recu Cv</th>
                         <th>Note</th>
-                        <th>Date Naissance</th>
                         <th>Stagiaire</th>
+                        <th>status</th>
+                        <th>action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,7 +24,7 @@
                         <td>{{ e.emCv }}</td>
                         <td>{{ e.dateRecuCv }}</td>
                         <td>{{ e.note }}</td>
-                        <td>{{ e.stagiaire }}</td>
+                        <td>{{ e.stagiaire.nom }} {{ e.stagiaire.prenom }}</td>
                         <td><span class="badge badge-success">Active</span></td>
                         <td>
                             <button class="btn btn-sm btn-warning mr-2" (click)="update(e)"><i

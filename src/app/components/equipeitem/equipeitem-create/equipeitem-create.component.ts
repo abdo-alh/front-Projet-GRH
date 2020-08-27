@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EquipeItemService } from '../../../controller/service/equipe-item.service';
+import { Stagiaire } from '../../../controller/model/stagiaire';
+import { StagiaireService } from '../../../controller/service/stagiaire.service';
 
 @Component({
   selector: 'app-equipeitem-create',
@@ -8,8 +10,14 @@ import { EquipeItemService } from '../../../controller/service/equipe-item.servi
 })
 export class EquipeitemCreateComponent implements OnInit {
 
-  constructor(private equipeitemService: EquipeItemService) { }
-  ngOnInit(): void {}
+  stagiaire:Stagiaire = new Stagiaire();
+  stagiaires:Stagiaire[];
+
+
+  constructor(private equipeitemService: EquipeItemService, private stagiaireService: StagiaireService) { }
+  ngOnInit(): void {
+    this.getAllStagiaires();
+  }
 
   get equipeitem(){
     return this.equipeitemService.equipeitem;
@@ -23,6 +31,21 @@ export class EquipeitemCreateComponent implements OnInit {
     else {
       this.equipeitemService.save();
     }
+}
+
+public getAllStagiaires(){
+  this.stagiaireService.getAllStagiaires().subscribe(
+    data => {
+      this.stagiaires = data;
+    },
+    error => {
+      console.log(error);
+    }
+  )
+}
+
+public onOptionsSelected(value: Stagiaire){
+  console.log(value);
 }
 
 }
