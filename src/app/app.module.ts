@@ -58,6 +58,7 @@ import { EquipeitemCreateComponent } from './components/equipeitem/equipeitem-cr
 import { EquipeitemListComponent } from './components/equipeitem/equipeitem-list/equipeitem-list.component';
 
   import { from } from 'rxjs';
+import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -74,7 +75,8 @@ import { EquipeitemListComponent } from './components/equipeitem/equipeitem-list
     TabsModule.forRoot(),
     ChartsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   declarations: [
     AppComponent,
