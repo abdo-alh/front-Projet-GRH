@@ -13,6 +13,8 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 })
 export class StageCreateComponent implements OnInit {
 
+  //This is stage Create Component
+
   encadrent: Employee = new Employee();
   employees: Employee[];
 
