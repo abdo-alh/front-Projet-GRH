@@ -14,6 +14,7 @@ import { StageComponent } from './components/stage/stage.component';
 import { AttestationEmployeeComponent } from './components/attestation/attestation-employee/attestation-employee.component';
 import { AttestationStagiaireComponent } from './components/attestation/attestation-stagiaire/attestation-stagiaire.component';
 import { EquipeitemComponent } from './components/equipeitem/equipeitem.component';
+import { TypeCongesComponent } from './components/type-conges/type-conges.component';
 
 export const routes: Routes = [
   {
@@ -83,6 +84,10 @@ export const routes: Routes = [
       {
         path: "equipeItems",
         component: EquipeitemComponent
+      },
+      {
+        path:"typeconge",
+        component: TypeCongesComponent
       },
       {
         path: 'buttons',

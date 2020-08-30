@@ -56,9 +56,13 @@ import { FormsModule } from '@angular/forms';
 import { EquipeitemComponent } from './components/equipeitem/equipeitem.component';
 import { EquipeitemCreateComponent } from './components/equipeitem/equipeitem-create/equipeitem-create.component';
 import { EquipeitemListComponent } from './components/equipeitem/equipeitem-list/equipeitem-list.component';
+import { TypeCongesComponent } from './components/type-conges/type-conges.component';
+import { TypeCongeCreateComponent } from './components/type-conges/type-conge-create/type-conge-create.component';
+import { TypeCongeListComponent } from './components/type-conges/type-conge-list/type-conge-list.component';
 
   import { from } from 'rxjs';
 import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   imports: [
@@ -98,7 +102,10 @@ import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
     StageListComponent,
     EquipeitemComponent,
     EquipeitemCreateComponent,
-    EquipeitemListComponent
+    EquipeitemListComponent,
+    TypeCongesComponent,
+    TypeCongeCreateComponent,
+    TypeCongeListComponent
    
   ],
   providers: [{

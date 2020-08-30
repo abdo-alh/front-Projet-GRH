@@ -1,0 +1,30 @@
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-align-justify"></i> Liste Des Types de Congé
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Libelle</th>
+                        <th>Nombre Des Jours</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let t of typeConges; let i = index">
+                        <td>{{ t.libelle }}</td>
+                        <td>{{ t.numberJour }}</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning mr-2" (click)="update(t)"><i
+                                    class="fa fa-pencil"></i></button>
+                            <button class="btn btn-sm btn-danger" (click)="delete(t.id, i)"><i
+                                    class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
