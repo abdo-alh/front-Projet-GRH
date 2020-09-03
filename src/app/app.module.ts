@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { LocationStrategy, HashLocationStrategy, CommonModule } from '@angular/common';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
@@ -53,9 +53,6 @@ import { StageComponent } from './components/stage/stage.component';
 import { StageCreateComponent } from './components/stage/stage-create/stage-create.component';
 import { StageListComponent } from './components/stage/stage-list/stage-list.component';
 import { FormsModule } from '@angular/forms';
-import { EquipeitemComponent } from './components/equipeitem/equipeitem.component';
-import { EquipeitemCreateComponent } from './components/equipeitem/equipeitem-create/equipeitem-create.component';
-import { EquipeitemListComponent } from './components/equipeitem/equipeitem-list/equipeitem-list.component';
 import { TypeCongesComponent } from './components/type-conges/type-conges.component';
 import { TypeCongeCreateComponent } from './components/type-conges/type-conge-create/type-conge-create.component';
 import { TypeCongeListComponent } from './components/type-conges/type-conge-list/type-conge-list.component';
@@ -63,10 +60,8 @@ import { DemandeCongesComponent } from './components/demande-conges/demande-cong
 import { DemandeCongeCreateComponent } from './components/demande-conges/demande-conge-create/demande-conge-create.component';
 import { DemandeCongeListComponent } from './components/demande-conges/demande-conge-list/demande-conge-list.component';
 
-
   import { from } from 'rxjs';
-import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+ import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -85,11 +80,7 @@ import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ChartsModule,
     HttpClientModule,
     FormsModule,
-<<<<<<< HEAD
-    CommonModule
-=======
     NgbModule
->>>>>>> ca08959d8d555b64dd07a09a5e0f84434112fbc7
   ],
   declarations: [
     AppComponent,
@@ -109,9 +100,6 @@ import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
     StageComponent,
     StageCreateComponent,
     StageListComponent,
-    EquipeitemComponent,
-    EquipeitemCreateComponent,
-    EquipeitemListComponent,
     TypeCongesComponent,
     TypeCongeCreateComponent,
     TypeCongeListComponent,
