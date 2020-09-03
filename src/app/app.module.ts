@@ -53,9 +53,6 @@ import { StageComponent } from './components/stage/stage.component';
 import { StageCreateComponent } from './components/stage/stage-create/stage-create.component';
 import { StageListComponent } from './components/stage/stage-list/stage-list.component';
 import { FormsModule } from '@angular/forms';
-import { EquipeitemComponent } from './components/equipeitem/equipeitem.component';
-import { EquipeitemCreateComponent } from './components/equipeitem/equipeitem-create/equipeitem-create.component';
-import { EquipeitemListComponent } from './components/equipeitem/equipeitem-list/equipeitem-list.component';
 import { TypeCongesComponent } from './components/type-conges/type-conges.component';
 import { TypeCongeCreateComponent } from './components/type-conges/type-conge-create/type-conge-create.component';
 import { TypeCongeListComponent } from './components/type-conges/type-conge-list/type-conge-list.component';
@@ -100,9 +97,6 @@ import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
     StageComponent,
     StageCreateComponent,
     StageListComponent,
-    EquipeitemComponent,
-    EquipeitemCreateComponent,
-    EquipeitemListComponent,
     TypeCongesComponent,
     TypeCongeCreateComponent,
     TypeCongeListComponent
