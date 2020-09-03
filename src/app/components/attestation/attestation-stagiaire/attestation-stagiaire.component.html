@@ -1,1 +1,29 @@
-<p>attestation-stagiaire works!</p>
+<h1>Attestation de Stage</h1>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">Ajouter des Attestations ds Stagiaires</button>
+
+<ng-template #mymodal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="stagiaire">Stagiaire</label>
+            <select name="stagiaire" id="stagiaire" [(ngModel)]="stagiaire" class="form-control" #mySelect
+                (change)='onOptionsSelected(mySelect.value)'>
+                <option value="">Sélectionnez...</option>
+                <option *ngFor="let e of stagiaires;" [ngValue]="e">
+                    {{ e.nom }} {{ e.prenom }}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="generatorPdf('open')">Apercu L'attestation</button>
+        <button type="button" class="btn btn-outline-dark" (click)="generatorPdf('download')">Télécharger</button>
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+    </div>
+</ng-template>

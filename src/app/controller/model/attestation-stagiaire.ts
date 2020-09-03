@@ -3,7 +3,7 @@ import { Stagiaire } from './stagiaire';
 import { TypeAttestation } from './type-attestation';
 export class AttestationStagiaire {
 
-    id:Number;
+    public id:number;
     encadrant:Employee;
     stagiaire:Stagiaire;
     dateAttestation:Date;

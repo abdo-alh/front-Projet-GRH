@@ -2,7 +2,7 @@ import { Employee } from './employee';
 import { TypeAttestation } from './type-attestation';
 export class AttestationEmployee {
 
-    id:Number;
+    public id:number;
     employee:Employee;
     manager:String;
     dateAttestation:Date;

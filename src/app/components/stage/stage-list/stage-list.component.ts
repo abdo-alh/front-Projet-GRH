@@ -20,12 +20,12 @@ export class StageListComponent implements OnInit {
  }
 
  public update(stage: Stage) {
-   this.stageService.stage = this.clone(stage);
+   this.stageService.stageCreate = this.clone(stage);
  }
 
  public delete(id: number, index: number) {
    if (confirm('Voulez-vous vraiment faire cette action?')) {
-     this.stageService.delete(id, index);
+     this.stageService.delete(id);
    }
  }
 

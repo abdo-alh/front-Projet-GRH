@@ -1,6 +1,6 @@
 export class TypeAttestation {
 
-    id:Number;
+    id:number;
     libelle:String;
 
     public constructor(){

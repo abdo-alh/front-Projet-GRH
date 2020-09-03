@@ -65,6 +65,7 @@ import { DemandeCongeListComponent } from './components/demande-conges/demande-c
 
 
   import { from } from 'rxjs';
+import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -84,7 +85,11 @@ import { DemandeCongeListComponent } from './components/demande-conges/demande-c
     ChartsModule,
     HttpClientModule,
     FormsModule,
+<<<<<<< HEAD
     CommonModule
+=======
+    NgbModule
+>>>>>>> ca08959d8d555b64dd07a09a5e0f84434112fbc7
   ],
   declarations: [
     AppComponent,

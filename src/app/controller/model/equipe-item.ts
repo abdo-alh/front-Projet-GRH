@@ -2,12 +2,12 @@ import { Stagiaire } from './stagiaire';
 import { Stage } from './stage';
 export class EquipeItem {
 
-    id:Number;
+    public id:number;
     dateDebut:Date;
     dateFin:Date;
     emCv:String;
     dateRecuCv:String;
-    note:Number;
+    note:number;
     stagiaire:Stagiaire;
     stage:Stage;
 

@@ -83,10 +83,6 @@ export const routes: Routes = [
         component: AttestationStagiaireComponent
       },
       {
-        path: "equipeItems",
-        component: EquipeitemComponent
-      },
-      {
         path:"typeconge",
         component: TypeCongesComponent
       },

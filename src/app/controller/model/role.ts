@@ -1,6 +1,6 @@
 export class Role {
 
-    id:Number;
+    id:number;
     authority:String;
 
     public constructor(){
