@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { LocationStrategy, HashLocationStrategy, CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
@@ -59,8 +59,13 @@ import { EquipeitemListComponent } from './components/equipeitem/equipeitem-list
 import { TypeCongesComponent } from './components/type-conges/type-conges.component';
 import { TypeCongeCreateComponent } from './components/type-conges/type-conge-create/type-conge-create.component';
 import { TypeCongeListComponent } from './components/type-conges/type-conge-list/type-conge-list.component';
+import { DemandeCongesComponent } from './components/demande-conges/demande-conges.component';
+import { DemandeCongeCreateComponent } from './components/demande-conges/demande-conge-create/demande-conge-create.component';
+import { DemandeCongeListComponent } from './components/demande-conges/demande-conge-list/demande-conge-list.component';
+
 
   import { from } from 'rxjs';
+
 
 
 @NgModule({
@@ -78,7 +83,8 @@ import { TypeCongeListComponent } from './components/type-conges/type-conge-list
     TabsModule.forRoot(),
     ChartsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   declarations: [
     AppComponent,
@@ -103,7 +109,10 @@ import { TypeCongeListComponent } from './components/type-conges/type-conge-list
     EquipeitemListComponent,
     TypeCongesComponent,
     TypeCongeCreateComponent,
-    TypeCongeListComponent
+    TypeCongeListComponent,
+    DemandeCongesComponent,
+    DemandeCongeCreateComponent,
+    DemandeCongeListComponent
    
   ],
   providers: [{

@@ -12,6 +12,7 @@ export class EmployeeCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  displayElement = false;
   get employee(){
     return this.employeeService.employee;
   }

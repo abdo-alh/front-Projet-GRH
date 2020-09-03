@@ -15,6 +15,7 @@ import { AttestationEmployeeComponent } from './components/attestation/attestati
 import { AttestationStagiaireComponent } from './components/attestation/attestation-stagiaire/attestation-stagiaire.component';
 import { EquipeitemComponent } from './components/equipeitem/equipeitem.component';
 import { TypeCongesComponent } from './components/type-conges/type-conges.component';
+import { DemandeCongesComponent } from './components/demande-conges/demande-conges.component';
 
 export const routes: Routes = [
   {
@@ -88,6 +89,10 @@ export const routes: Routes = [
       {
         path:"typeconge",
         component: TypeCongesComponent
+      },
+      {
+        path:"demandeConge",
+        component: DemandeCongesComponent
       },
       {
         path: 'buttons',
