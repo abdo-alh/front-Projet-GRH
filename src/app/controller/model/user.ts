@@ -1,6 +1,6 @@
 export class User {
 
-    id:Number;
+    public id:number;
     nom:String;
     prenom:String;
     email:String;

@@ -4,6 +4,8 @@ import { Employee } from '../../../controller/model/employee';
 import { EmployeeService } from '../../../controller/service/employee.service';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import { StagiaireService } from '../../../controller/service/stagiaire.service';
+import { Stagiaire } from '../../../controller/model/stagiaire';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
@@ -17,15 +19,17 @@ export class StageCreateComponent implements OnInit {
 
   encadrent: Employee = new Employee();
   employees: Employee[];
+  stagiaires:Stagiaire[];
 
-  constructor(private stageService: StageService, private employeeService: EmployeeService) { }
+  constructor(private stageService: StageService, private employeeService: EmployeeService,private stagiaireService:StagiaireService) { }
 
   ngOnInit(): void {
     this.getAllEmployees();
+    this.getAllStagiaires();
   }
 
   get stage() {
-    return this.stageService.stage;
+    return this.stageService.stageCreate;
   }
 
   dateNow() {
@@ -44,55 +48,19 @@ export class StageCreateComponent implements OnInit {
     return year + "-" + month + "-" + date;
   }
 
-  generatorPdf(action = 'open') {
-    const documentDefinition = this.getDocumentDefinition();
-    switch (action) {
-      case 'open': pdfMake.createPdf(documentDefinition).open();
-        break;
-      case 'print': pdfMake.createPdf(documentDefinition).print();
-        break;
-      case 'download':
-        pdfMake.createPdf(documentDefinition).download(this.dateNow()+'_'+this.stage.encadrent.nom + '_' + this.stage.encadrent.prenom);
-        break;
-      default: pdfMake.createPdf(documentDefinition).open();
-        break;
-    }
-
-
+  public addItem(){
+    this.stageService.addItem();
   }
 
-  getDocumentDefinition() {
-    return {
-      content: [
-        {
-          text: 'ATTESTATION DE STAGE',
-          bold: true,
-          fontSize: 20,
-          alignment: 'center',
-          margin: [0, 0, 0, 20]
-        },
-        {
-          columns: [
-            [{
-              text: 'Raison : ' + this.stage.raison
-            },
-            {
-              text: 'Etat : ' + this.stage.etat
-            },
-            {
-              text: 'Encadrant : ' + this.stage.encadrent.nom + ' ' + this.stage.encadrent.nom
-            }]
-          ]
-        }],
-      styles: {
-        name: {
-          fontSize: 16,
-          bold: true
-        }
-      }
-    };
+  public get stagiaire(){
+    return this.stageService.stagiaireCreate;
   }
 
+  public set stagiaire(value:Stagiaire){
+    this.stageService.stagiaireCreate = value;
+  }
+
+  
   public getAllEmployees() {
     this.employeeService.getAllEmployees().subscribe(
       data => {
@@ -104,17 +72,40 @@ export class StageCreateComponent implements OnInit {
     )
   }
 
+  public getAllStagiaires(){
+    this.stagiaireService.getAllStagiaires().subscribe(
+      data => {
+        this.stagiaires = data;
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
   public save() {
-    if (this.stageService.stage.id != null) {
-      this.stageService.update();
-    }
-    else {
-      this.stageService.save();
-    }
+    this.stageService.save();
   }
 
   public onOptionsSelected(value: Employee) {
     console.log(value);
+  }
+
+  public delete(id: number) {
+    console.log(id);
+    this.stageService.delete(id);
+  }
+
+  public find(id: number) {
+    this.stageService.find(id);
+  }
+
+  public get equipeItem(){
+    return this.stageService.itemCreate;
+  }
+
+  public get equipeItems(){
+    return this.stageService.stageCreate.equipeItems;
   }
 
 }

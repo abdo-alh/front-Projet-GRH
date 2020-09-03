@@ -3,8 +3,8 @@ export class Holiday {
     holiday_name:String;
     from_date:Date;
     to_date:Date;
-    number_of_days:Number;
-    year:Number;
+    number_of_days:number;
+    year:number;
 
     public constructor(){
         

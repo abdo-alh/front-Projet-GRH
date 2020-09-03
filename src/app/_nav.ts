@@ -46,11 +46,6 @@ export const navItems: INavData[] = [
       }]
   },
   {
-    name: 'Equipe Items',
-    url: '/equipeItems',
-    icon: 'icon-cursor'
-  },
-  {
     name: 'Type De Congé',
     url: '/typeconge',
     icon :'icon-cursor'
