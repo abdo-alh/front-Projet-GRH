@@ -28,7 +28,7 @@ export class DemandeCongeCreateComponent implements OnInit {
    private div3: boolean = true;
    private div4: boolean = true;
   
-b
+
   ngOnInit(): void {
     this.getAllTypeConges();
     this.getAllEmployees();
