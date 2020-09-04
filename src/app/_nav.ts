@@ -51,6 +51,11 @@ export const navItems: INavData[] = [
     icon :'icon-cursor'
   },
   {
+    name:'Demande De Congé',
+    url : '/demandeConge',
+    icon :'icon-cursor'
+  },
+  {
     name: 'Colors',
     url: '/theme/colors',
     icon: 'icon-drop'

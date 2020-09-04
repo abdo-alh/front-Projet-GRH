@@ -56,9 +56,12 @@ import { FormsModule } from '@angular/forms';
 import { TypeCongesComponent } from './components/type-conges/type-conges.component';
 import { TypeCongeCreateComponent } from './components/type-conges/type-conge-create/type-conge-create.component';
 import { TypeCongeListComponent } from './components/type-conges/type-conge-list/type-conge-list.component';
+import { DemandeCongesComponent } from './components/demande-conges/demande-conges.component';
+import { DemandeCongeCreateComponent } from './components/demande-conges/demande-conge-create/demande-conge-create.component';
+import { DemandeCongeListComponent } from './components/demande-conges/demande-conge-list/demande-conge-list.component';
 
   import { from } from 'rxjs';
-import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
+ import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -99,7 +102,10 @@ import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
     StageListComponent,
     TypeCongesComponent,
     TypeCongeCreateComponent,
-    TypeCongeListComponent
+    TypeCongeListComponent,
+    DemandeCongesComponent,
+    DemandeCongeCreateComponent,
+    DemandeCongeListComponent
    
   ],
   providers: [{
