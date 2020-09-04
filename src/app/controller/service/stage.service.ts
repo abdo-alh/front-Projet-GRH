@@ -32,6 +32,7 @@ export class StageService {
   }
 
   public addItem(){
+    this.itemCreate.stagiaire = this.stagiaireCreate;
     let itemClone = new EquipeItem();
     itemClone.id = this.itemCreate.id;
     itemClone.note = this.itemCreate.note;
@@ -41,6 +42,7 @@ export class StageService {
     itemClone.emCv = this.itemCreate.emCv;
     itemClone.stagiaire = this.itemCreate.stagiaire;
     console.log(itemClone);
+    console.log(this.itemCreate.stagiaire);
     this.stageCreate.equipeItems.push(itemClone);
     console.log(this.stageCreate.equipeItems);
     this.itemCreate = new EquipeItem();

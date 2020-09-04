@@ -10,6 +10,7 @@
                         <th>Raison</th>
                         <th>Etat</th>
                         <th>Encadrant</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -17,6 +18,10 @@
                         <td>{{ s.raison }}</td>
                         <td>{{ s.etat }}</td>
                         <td>{{ s.encadrent.nom }} {{ s.encadrent.prenom }}</td>
+                        <td>
+                            <button class="btn btn-success btn-xs fa fa-info" (click)="find(i)"></button>
+                            <button class="btn btn-success btn-xs fa fa-trash" (click)="delete(i)"></button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

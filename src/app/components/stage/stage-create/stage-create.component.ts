@@ -20,6 +20,22 @@ export class StageCreateComponent implements OnInit {
   encadrent: Employee = new Employee();
   employees: Employee[];
   stagiaires:Stagiaire[];
+  raisons = [{
+    'libelle':'Stage Pfe'
+  },{
+    'libelle':'Stage'
+  }
+  ,{
+    'libelle':'Stage Préembauche'
+  }];
+  etats = [{
+    'libelle':'Annuler'
+  },{
+    'libelle':'En Cours'
+  }
+  ,{
+    'libelle':'Terminer'
+  }];
 
   constructor(private stageService: StageService, private employeeService: EmployeeService,private stagiaireService:StagiaireService) { }
 
