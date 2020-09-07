@@ -46,14 +46,20 @@ export const navItems: INavData[] = [
       }]
   },
   {
-    name: 'Type De Congé',
-    url: '/typeconge',
-    icon :'icon-cursor'
-  },
-  {
-    name:'Demande De Congé',
-    url : '/demandeConge',
-    icon :'icon-cursor'
+    name: 'Conge',
+    url: '/Conge',
+    icon: 'icon-puzzle',
+    children: [
+      {
+        name: 'Type De Congé',
+        url: '/typeconge',
+        icon: 'icon-puzzle'
+      },
+      {
+        name: 'Demande De Congé',
+        url: '/demandeConge',
+        icon: 'icon-puzzle'
+      }]
   },
   {
     name: 'Colors',

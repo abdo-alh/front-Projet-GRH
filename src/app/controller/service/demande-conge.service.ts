@@ -24,6 +24,40 @@ export class DemandeCongeService {
     });
   }
 
+  public getAllDemandeConge(){
+    return this.http.get<DemandeConge[]>(this.baseUrl+'/');
+  }
+
+  public update() {
+    this.http.put<number>(this.baseUrl + '/update/', this.demandeConge).subscribe(data => {
+      if (data > 0) {
+        const index = this.demandeConges.findIndex(p => p.id === this.demandeConge.id);
+        this.demandeConges[index] = this.demandeConge;
+        this.demandeConge = null;
+      }
+      else {
+        console.log('Erreur modification : ' + data);
+      }
+    });
+  }
+
+  public delete(id, index) {
+    this.http.delete<number>(this.baseUrl + '/delete/id/' + id).subscribe(data => {
+      if (data > 0) {
+        this.demandeConges.splice(index, 1);
+      }
+      else {
+        console.log('Erreur suppression : ' + data);
+      }
+    });
+  }
+
+  public getAll() {
+    this.http.get<Array<DemandeConge>>(this.baseUrl + '/').subscribe(data => {
+      this.demandeConges = data;
+    });
+  }
+
   get demandeConge(): DemandeConge {
     if (this._demandeConge == null) {
       this._demandeConge = new DemandeConge();

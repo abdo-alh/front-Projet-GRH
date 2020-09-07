@@ -79,8 +79,12 @@
             <input type="file"  [(ngModel)]="demandeConge.certificat" class="form-control" id="certificat" placeholder="certificat">
         </div>
         <div class="form-group">
-            <label for="status">Status</label>
-            <input type="text" [(ngModel)]="demandeConge.Status" class="form-control" id="status" placeholder="Entrer la status">
+            <label for="duree">Status</label>
+            <select name="status" id="status" [(ngModel)]="demandeConge.status" class="form-control" >
+                <option value="">Sélectionnez...</option>
+                <option> Aprove </option>
+                <option> Not Aprove </option>
+            </select>
         </div>
         <div class="card-footer">
             <button type="submit" (click)="save()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save</button>

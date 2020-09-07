@@ -1,7 +1,9 @@
+import { TypeConge } from './type-conge.model';
+
 export class DemandeConge {
    id:number;
    employee:string;
-   typeConge:string;
+   typeConge:TypeConge;
    dateDebut:Date;
    dateFin:Date;
    duree:number;

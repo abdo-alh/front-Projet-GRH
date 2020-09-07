@@ -23,7 +23,7 @@ export class DemandeCongeCreateComponent implements OnInit {
     private employeeService: EmployeeService) { }
  
    private div2: boolean = true;
-   private div5: boolean = true;
+   private div5: boolean = false;
    private div1: boolean = true;
    private div3: boolean = true;
    private div4: boolean = true;
@@ -38,12 +38,14 @@ export class DemandeCongeCreateComponent implements OnInit {
     return this.demandeCongeService.demandeConge;
   }
 
+  
+
   toggle(){
-    if(this.div2 == true && this.div5 == true)
+    if(this.div2 == true && this.demandeConge.typeConge.libelle == 'maladie')
     {
        
-       this.div2 =false;
-       this.div5 == true;
+       this.div2 = false;
+       this.div5 = true;
      //console.log(this.show);
     } 
     else if(this.div2 == false && this.div2 == false &&  this.div1 == false && this.div3 == false && this.div4 == false) {
@@ -51,7 +53,6 @@ export class DemandeCongeCreateComponent implements OnInit {
      this.div3=true;
      this.div4=true;
      this.div2=false;
-     this.div5=false;
 
     }
     else if(this.div1 ==true && this.div2 ==true)
@@ -66,11 +67,22 @@ export class DemandeCongeCreateComponent implements OnInit {
   }
 
   togglee(){
-    this.div1=false;
-    this.div3=false;
-    this.div4=false;
-    this.div2=false;
-    this.div5=false;  //console.log(this.showo);
+    if(this.demandeConge.typeConge.libelle == 'maladie')
+    {
+      this.div1=false;
+      this.div3=false;
+      this.div4=false;
+      this.div2=false;
+      this.div5=true; 
+    } else {
+      this.div1=false;
+      this.div3=false;
+      this.div4=false;
+      this.div2=false;
+      this.div5=false; 
+
+    }
+     
 }
 
 togglees()
@@ -103,7 +115,15 @@ public getAllTypeConges(){
 }
 
 public onOptionsSelected(value: TypeConge){
-  console.log(value);
+  if(this.demandeConge.typeConge.libelle == 'maladie')
+  {
+    this.div5 = true;
+  }
+  else {
+    this.div5 = false;
+  }
+  
+  console.log(this.demandeConge.typeConge.libelle);
 }
 
 public getAllEmployees(){
