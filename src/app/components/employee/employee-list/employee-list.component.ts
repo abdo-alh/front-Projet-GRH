@@ -37,6 +37,8 @@ export class EmployeeListComponent implements OnInit {
     e.ville = employee.ville;
     e.adresse = employee.adresse;
     e.datenaissance = employee.datenaissance;
+    e.departement = employee.departement;
+    e.designation = employee.designation;
     return e;
   }
 

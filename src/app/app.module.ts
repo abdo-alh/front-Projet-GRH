@@ -59,9 +59,16 @@ import { TypeCongeListComponent } from './components/type-conges/type-conge-list
 import { DemandeCongesComponent } from './components/demande-conges/demande-conges.component';
 import { DemandeCongeCreateComponent } from './components/demande-conges/demande-conge-create/demande-conge-create.component';
 import { DemandeCongeListComponent } from './components/demande-conges/demande-conge-list/demande-conge-list.component';
+import { DepartementsComponent } from './components/departements/departements.component';
+import { DepartementCreateComponent } from './components/departements/departement-create/departement-create.component';
+import { DepartementListComponent } from './components/departements/departement-list/departement-list.component';
+import { DesignationsComponent } from './components/designations/designations.component';
+import { DesignationCreateComponent } from './components/designations/designation-create/designation-create.component';
+import { DesignationListComponent } from './components/designations/designation-list/designation-list.component';
 
-  import { from } from 'rxjs';
+import { from } from 'rxjs';
  import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
@@ -105,7 +112,13 @@ import { DemandeCongeListComponent } from './components/demande-conges/demande-c
     TypeCongeListComponent,
     DemandeCongesComponent,
     DemandeCongeCreateComponent,
-    DemandeCongeListComponent
+    DemandeCongeListComponent,
+    DepartementsComponent,
+    DepartementCreateComponent,
+    DepartementListComponent,
+    DesignationsComponent,
+    DesignationCreateComponent,
+    DesignationListComponent
    
   ],
   providers: [{

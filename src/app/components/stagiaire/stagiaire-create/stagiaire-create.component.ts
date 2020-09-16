@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Departement } from '../../../controller/model/departement.model';
+import { Designation } from '../../../controller/model/designation.model';
+import { DepartementService } from '../../../controller/service/departement.service';
+import { DesignationService } from '../../../controller/service/designation.service';
 import { StagiaireService } from '../../../controller/service/stagiaire.service';
 
 @Component({
@@ -8,9 +12,18 @@ import { StagiaireService } from '../../../controller/service/stagiaire.service'
 })
 export class StagiaireCreateComponent implements OnInit {
 
-  constructor(private stagiaireService:StagiaireService) { }
+  departement:Departement = new Departement();
+  departements:Departement[];
+
+  designation:Designation = new Designation();
+  designations:Designation[];
+  
+  constructor(private stagiaireService:StagiaireService , private departementService:DepartementService,
+    private designationService: DesignationService) { }
 
   ngOnInit(): void {
+    this.getAllDepartements();
+    this.getAllDesignations();
   }
 
   get stagiaire(){
@@ -24,6 +37,36 @@ export class StagiaireCreateComponent implements OnInit {
     else {
       this.stagiaireService.save();
     }
+  }
+
+  public getAllDepartements(){
+    this.departementService.getAllDepartements().subscribe(
+      data => {
+        this.departements = data;
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  public onOptionsSelectedem(value: Departement){
+    console.log(value);
+  }
+  
+  public getAllDesignations(){
+    this.designationService.getAllDepartements().subscribe(
+      data => {
+        this.designations = data;
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  public onOptionsSelectedeme(value: Designation){
+    console.log(value);
   }
 
 }

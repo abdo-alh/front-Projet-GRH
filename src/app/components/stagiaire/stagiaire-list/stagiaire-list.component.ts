@@ -38,6 +38,8 @@ export class StagiaireListComponent implements OnInit {
    e.ville = stagiaire.ville;
    e.adresse = stagiaire.adresse;
    e.datenaissance = stagiaire.datenaissance;
+   e.departement = stagiaire.departement;
+   e.designation = stagiaire.designation;
    return e;
  }
 }

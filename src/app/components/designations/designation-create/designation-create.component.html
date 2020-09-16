@@ -1,0 +1,17 @@
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <strong>Designation</strong>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="name">Designation</label>
+                <input type="text" [(ngModel)]="designation.libelle" class="form-control" id="libelle" placeholder="Entrer La Designation">
+            </div>
+            <div class="card-footer">
+                <button type="submit" (click)="save()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save</button>
+                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+            </div>
+        </div>
+    </div>
+</div>
