@@ -22,6 +22,8 @@
                         <th>Adresse</th>
                         <th>Ville</th>
                         <th>Date Naissance</th>
+                        <th>Departement</th>
+                        <th>Designations</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -34,6 +36,8 @@
                         <td>{{ e.adresse }}</td>
                         <td>{{ e.ville }}</td>
                         <td>{{ e.datenaissance }}</td>
+                        <td>{{ e.departement.libelle }}</td>
+                        <td>{{ e.designation.libelle }} </td>
                         <td><span class="badge badge-success">Active</span></td>
                         <td>
                             <button class="btn btn-sm btn-warning mr-2" (click)="update(e)"><i

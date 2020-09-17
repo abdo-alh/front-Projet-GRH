@@ -59,12 +59,23 @@ import { TypeCongeListComponent } from './components/type-conges/type-conge-list
 import { DemandeCongesComponent } from './components/demande-conges/demande-conges.component';
 import { DemandeCongeCreateComponent } from './components/demande-conges/demande-conge-create/demande-conge-create.component';
 import { DemandeCongeListComponent } from './components/demande-conges/demande-conge-list/demande-conge-list.component';
+import { DepartementsComponent } from './components/departements/departements.component';
+import { DepartementCreateComponent } from './components/departements/departement-create/departement-create.component';
+import { DepartementListComponent } from './components/departements/departement-list/departement-list.component';
+import { DesignationsComponent } from './components/designations/designations.component';
+import { DesignationCreateComponent } from './components/designations/designation-create/designation-create.component';
+import { DesignationListComponent } from './components/designations/designation-list/designation-list.component';
 
 import { from } from 'rxjs';
+<<<<<<< HEAD
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserAuth } from './controller/model/user-auth';
 import { InterceptorService } from './controller/service/auth/interceptor.service';
 import { AuthGuard } from './controller/service/auth/auth.guard';
+=======
+ import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
+>>>>>>> 7af9f4f10ec16938c2f99faa279b443969d53c5d
+
 
 
 @NgModule({
@@ -110,7 +121,17 @@ import { AuthGuard } from './controller/service/auth/auth.guard';
     DemandeCongesComponent,
     DemandeCongeCreateComponent,
     DemandeCongeListComponent,
+<<<<<<< HEAD
 
+=======
+    DepartementsComponent,
+    DepartementCreateComponent,
+    DepartementListComponent,
+    DesignationsComponent,
+    DesignationCreateComponent,
+    DesignationListComponent
+   
+>>>>>>> 7af9f4f10ec16938c2f99faa279b443969d53c5d
   ],
   providers: [{
     provide: LocationStrategy,

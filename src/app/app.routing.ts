@@ -17,6 +17,9 @@ import { P500Component } from './views/error/500.component';
 
 
 
+import { DepartementsComponent } from './components/departements/departements.component';
+import { DesignationsComponent } from './components/designations/designations.component';
+
 export const routes: Routes = [
   {
     path: '',
@@ -91,6 +94,14 @@ export const routes: Routes = [
       {
         path:"demandeConge",
         component: DemandeCongesComponent
+      },
+      {
+        path:"departement",
+        component: DepartementsComponent
+      },
+      {
+        path:"designation",
+        component: DesignationsComponent
       },
       {
         path: 'buttons',

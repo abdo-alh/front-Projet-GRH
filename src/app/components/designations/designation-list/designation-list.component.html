@@ -1,0 +1,28 @@
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-align-justify"></i> Liste Des Designations
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let d of designations; let i = index">
+                        <td>{{ d.libelle }}</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning mr-2" (click)="update(d)"><i
+                                    class="fa fa-pencil"></i></button>
+                            <button class="btn btn-sm btn-danger" (click)="delete(d.id, i)"><i
+                                    class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
