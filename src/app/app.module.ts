@@ -40,7 +40,7 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { EmployeeCreateComponent } from './components/employee/employee-create/employee-create.component';
 import { EmployeeListComponent } from './components/employee/employee-list/employee-list.component';
 import { EmployeeComponent } from './components/employee/employee.component';
@@ -52,7 +52,7 @@ import { AttestationEmployeeComponent } from './components/attestation/attestati
 import { StageComponent } from './components/stage/stage.component';
 import { StageCreateComponent } from './components/stage/stage-create/stage-create.component';
 import { StageListComponent } from './components/stage/stage-list/stage-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TypeCongesComponent } from './components/type-conges/type-conges.component';
 import { TypeCongeCreateComponent } from './components/type-conges/type-conge-create/type-conge-create.component';
 import { TypeCongeListComponent } from './components/type-conges/type-conge-list/type-conge-list.component';
@@ -60,8 +60,11 @@ import { DemandeCongesComponent } from './components/demande-conges/demande-cong
 import { DemandeCongeCreateComponent } from './components/demande-conges/demande-conge-create/demande-conge-create.component';
 import { DemandeCongeListComponent } from './components/demande-conges/demande-conge-list/demande-conge-list.component';
 
-  import { from } from 'rxjs';
- import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { from } from 'rxjs';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UserAuth } from './controller/model/user-auth';
+import { InterceptorService } from './controller/service/auth/interceptor.service';
+import { AuthGuard } from './controller/service/auth/auth.guard';
 
 
 @NgModule({
@@ -80,7 +83,8 @@ import { DemandeCongeListComponent } from './components/demande-conges/demande-c
     ChartsModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
@@ -105,13 +109,19 @@ import { DemandeCongeListComponent } from './components/demande-conges/demande-c
     TypeCongeListComponent,
     DemandeCongesComponent,
     DemandeCongeCreateComponent,
-    DemandeCongeListComponent
-   
+    DemandeCongeListComponent,
+
   ],
   providers: [{
     provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
-  bootstrap: [ AppComponent ]
+    useClass: HashLocationStrategy,
+
+  }, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: InterceptorService,
+    multi: true
+  },
+  AuthGuard],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,6 +9,8 @@ export class DefaultLayoutComponent {
   public sidebarMinimized = false;
   public navItems = navItems;
 
+  constructor(){}
+
   toggleMinimize(e) {
     this.sidebarMinimized = e;
   }

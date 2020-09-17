@@ -1,24 +1,26 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
-// Import Containers
-import { DefaultLayoutComponent } from './containers';
-
-import { P404Component } from './views/error/404.component';
-import { P500Component } from './views/error/500.component';
+import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { EmployeeComponent } from './components/employee/employee.component';
-import { StagiaireComponent } from './components/stagiaire/stagiaire.component';
-import { StageComponent } from './components/stage/stage.component';
 import { AttestationEmployeeComponent } from './components/attestation/attestation-employee/attestation-employee.component';
 import { AttestationStagiaireComponent } from './components/attestation/attestation-stagiaire/attestation-stagiaire.component';
-import { TypeCongesComponent } from './components/type-conges/type-conges.component';
 import { DemandeCongesComponent } from './components/demande-conges/demande-conges.component';
+import { EmployeeComponent } from './components/employee/employee.component';
+import { StageComponent } from './components/stage/stage.component';
+import { StagiaireComponent } from './components/stagiaire/stagiaire.component';
+import { TypeCongesComponent } from './components/type-conges/type-conges.component';
+// Import Containers
+import { DefaultLayoutComponent } from './containers';
+import { AuthGuard } from './controller/service/auth/auth.guard';
+import { P404Component } from './views/error/404.component';
+import { P500Component } from './views/error/500.component';
+
+
 
 export const routes: Routes = [
   {
     path: '',
+    //canActivate: [AuthGuard],
     redirectTo: 'dashboard',
     pathMatch: 'full',
   },
@@ -43,19 +45,20 @@ export const routes: Routes = [
       title: 'Login Page'
     }
   },
-  {
-    path: 'register',
-    component: RegisterComponent,
-    data: {
-      title: 'Register Page'
-    }
-  },
+  //{
+  //  path: 'register',
+  //  component: RegisterComponent,
+  //  data: {
+  //    title: 'Register Page'
+  //  }
+  //},
   {
     path: '',
     component: DefaultLayoutComponent,
     data: {
       title: 'Home'
     },
+    //canActivate: [AuthGuard],
     children: [
       {
         path: 'base',

@@ -52,6 +52,42 @@ export class DemandeCongeService {
     });
   }
 
+  /* public uploadFile(file: FormData) {
+    this.http.post<number>(this.baseUrl + '/uploadFile', file).subscribe(
+      data => {
+        if (data === 1) {
+          document.getElementById('fa').style.display = ' inline';
+          document.getElementById('label2').innerText = 'sucess';
+          document.getElementById('label2').style.color = 'green';
+          this.save();
+        }
+        console.log('sucess');
+      }, eror => {
+        console.log('eroro', eror);
+      });
+  }
+
+
+  public uploadFileEdit(file: FormData, disp: boolean) {
+    console.log(file);
+    if (disp === false) {
+      this.update();
+    } else {
+      this.http.post<number>('http://localhost:8080/generated/modelLettreReponse/uploadFile', file).subscribe(
+        data => {
+          if (data === 1) {
+            this.update();
+            document.getElementById('fa').style.display = ' inline';
+            document.getElementById('label2').innerText = 'sucess';
+            document.getElementById('label2').style.color = 'green';
+          }
+          console.log('sucess');
+        }, eror => {
+          console.log('eroro', eror);
+        });
+    }
+  } */
+
   public getAll() {
     this.http.get<Array<DemandeConge>>(this.baseUrl + '/').subscribe(data => {
       this.demandeConges = data;

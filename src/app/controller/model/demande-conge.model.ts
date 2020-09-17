@@ -1,3 +1,4 @@
+import { CertificatFile } from './file';
 import { TypeConge } from './type-conge.model';
 
 export class DemandeConge {
@@ -11,6 +12,7 @@ export class DemandeConge {
    raison:string;
    certificat:string;
    status:string;
+   //public certificatFile:CertificatFile = new CertificatFile();
 
    public constructor () {
        
