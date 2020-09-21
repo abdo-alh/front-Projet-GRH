@@ -35,6 +35,7 @@ export class TypeCongeService {
   public save() {
     this.http.post<TypeConge>(this.baseUrl + '/', this.typeConge).subscribe(data => {
       if (data != null) {
+        this.typeConge.id = data.id;
         this.typeConges.push(this.typeConge);
         this.typeConge = null;
       }

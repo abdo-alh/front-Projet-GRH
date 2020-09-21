@@ -67,14 +67,10 @@ import { DesignationCreateComponent } from './components/designations/designatio
 import { DesignationListComponent } from './components/designations/designation-list/designation-list.component';
 
 import { from } from 'rxjs';
-<<<<<<< HEAD
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserAuth } from './controller/model/user-auth';
 import { InterceptorService } from './controller/service/auth/interceptor.service';
 import { AuthGuard } from './controller/service/auth/auth.guard';
-=======
- import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
->>>>>>> 7af9f4f10ec16938c2f99faa279b443969d53c5d
 
 
 
@@ -121,9 +117,6 @@ import { AuthGuard } from './controller/service/auth/auth.guard';
     DemandeCongesComponent,
     DemandeCongeCreateComponent,
     DemandeCongeListComponent,
-<<<<<<< HEAD
-
-=======
     DepartementsComponent,
     DepartementCreateComponent,
     DepartementListComponent,
@@ -131,7 +124,6 @@ import { AuthGuard } from './controller/service/auth/auth.guard';
     DesignationCreateComponent,
     DesignationListComponent
    
->>>>>>> 7af9f4f10ec16938c2f99faa279b443969d53c5d
   ],
   providers: [{
     provide: LocationStrategy,

@@ -7,6 +7,7 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <th>Id</th>
                         <th>Libelle</th>
                         <th>Nombre Des Jours</th>
                         <th>Action</th>
@@ -14,6 +15,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let t of typeConges; let i = index">
+                        <td>{{ t.id }}</td>
                         <td>{{ t.libelle }}</td>
                         <td>{{ t.numberJour }}</td>
                         <td>
