@@ -67,12 +67,19 @@ import { DesignationCreateComponent } from './components/designations/designatio
 import { DesignationListComponent } from './components/designations/designation-list/designation-list.component';
 
 import { from } from 'rxjs';
+<<<<<<< HEAD
 import { UserAuth } from './controller/model/user-auth';
 import { InterceptorService } from './controller/service/auth/interceptor.service';
 import { AuthGuard } from './controller/service/auth/auth.guard';
 
  import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+=======
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UserAuth } from './controller/model/user-auth';
+import { InterceptorService } from './controller/service/auth/interceptor.service';
+import { AuthGuard } from './controller/service/auth/auth.guard';
+>>>>>>> 0889e2f5d6b703daac1b6ec5e182d3ca51c0b847
 
 
 

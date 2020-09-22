@@ -21,10 +21,15 @@ export class TypeCongeCreateComponent implements OnInit {
   public save() {
     if (this.typeCongeService.typeConge.id != null) {
        this.typeCongeService.update();
+<<<<<<< HEAD
          //console.log("error");
+=======
+       console.log("update");
+>>>>>>> 0889e2f5d6b703daac1b6ec5e182d3ca51c0b847
     }
     else {
       this.typeCongeService.save();
+      console.log("save");
     }
   }
 }

@@ -23,7 +23,7 @@ import { DesignationsComponent } from './components/designations/designations.co
 export const routes: Routes = [
   {
     path: '',
-    //canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     redirectTo: 'dashboard',
     pathMatch: 'full',
   },
@@ -61,7 +61,7 @@ export const routes: Routes = [
     data: {
       title: 'Home'
     },
-    //canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'base',

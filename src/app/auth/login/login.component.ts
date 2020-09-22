@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthenticationService } from '../../controller/service/auth/authentification.service';
 
 @Component({
@@ -7,18 +8,18 @@ import { AuthenticationService } from '../../controller/service/auth/authentific
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthenticationService) {
-  }
+  username:String;
+  password:String;
 
-  get userCandidat() {
-      return this.authService.userCandidat;
+  constructor(private authService: AuthenticationService,private router:Router) {
   }
 
   ngOnInit() {
   }
 
   public login() {
-      return this.authService.login();
+      this.authService.authenticate(this.username,this.password);
+      this.authService.isUserLoggedIn();
   }
 
  }
