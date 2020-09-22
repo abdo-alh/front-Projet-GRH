@@ -21,7 +21,7 @@ export class TypeCongeCreateComponent implements OnInit {
   public save() {
     if (this.typeCongeService.typeConge.id != null) {
        this.typeCongeService.update();
-      console.log("error");
+         //console.log("error");
     }
     else {
       this.typeCongeService.save();

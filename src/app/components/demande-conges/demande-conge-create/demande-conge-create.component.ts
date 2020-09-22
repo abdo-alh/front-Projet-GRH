@@ -40,6 +40,7 @@ export class DemandeCongeCreateComponent implements OnInit {
     });*/
   }
 
+
   get demandeConge() {
     return this.demandeCongeService.demandeConge;
   }
@@ -116,9 +117,13 @@ export class DemandeCongeCreateComponent implements OnInit {
     this.div4 = false;
   }
 
+
+
+
+
   public save() {
     if (this.demandeCongeService.demandeConge.id != null) {
-      //this.equipeitemService.update();
+      this.demandeCongeService.update();
       console.log("error");
     }
     else {

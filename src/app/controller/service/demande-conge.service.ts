@@ -15,6 +15,7 @@ export class DemandeCongeService {
   public save() {
     this.http.post<DemandeConge>(this.baseUrl + '/', this.demandeConge).subscribe(data => {
       if (data != null) {
+        this.demandeConge.id = data.id;
         this.demandeConges.push(this.demandeConge);
         this.demandeConge = null;
       }
@@ -23,6 +24,8 @@ export class DemandeCongeService {
       }
     });
   }
+
+
 
   public getAllDemandeConge(){
     return this.http.get<DemandeConge[]>(this.baseUrl+'/');

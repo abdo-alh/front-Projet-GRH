@@ -15,6 +15,7 @@ export class EmployeeService {
   public save() {
     this.http.post<Employee>(this.baseUrl + '/', this.employee).subscribe(data => {
       if (data != null) {
+        this.employee.id = data.id;
         this.employees.push(this.employee);
         this.employee = null;
       }

@@ -1,5 +1,6 @@
 export class TypeConge {
-    public id:number;
+   
+    public id: number;
     libelle:string;
     numberJour:number;
 
