@@ -4,14 +4,16 @@
             <strong>Departement</strong>
         </div>
         <div class="card-body">
+           <form #departementForm="ngForm"  (ngSubmit)="save(departementForm.value)">
             <div class="form-group">
                 <label for="name">Departement</label>
-                <input type="text" [(ngModel)]="departement.libelle" class="form-control" id="libelle" placeholder="Entrer Le Departement">
+                <input type="text" #libelle="ngModel" name="libelle" [(ngModel)]="departement.libelle" class="form-control" id="libelle" placeholder="Entrer Le Departement" required>
             </div>
             <div class="card-footer">
-                <button type="submit" (click)="save()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save</button>
+                <button type="submit" [disabled]="!departementForm.valid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save</button>
                 <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
             </div>
-        </div>
+        </form>
+         </div>
     </div>
 </div>

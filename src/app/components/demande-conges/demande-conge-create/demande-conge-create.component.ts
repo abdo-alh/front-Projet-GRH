@@ -22,6 +22,8 @@ export class DemandeCongeCreateComponent implements OnInit {
   employee: Employee = new Employee();
   employees: Employee[];
 
+   userFile ;
+
   constructor(private demandeCongeService: DemandeCongeService, private typeCongeService: TypeCongeService,
     private employeeService: EmployeeService,private formBuilder: FormBuilder) { }
 
@@ -168,7 +170,14 @@ export class DemandeCongeCreateComponent implements OnInit {
   public onOptionsSelectedem(value: Employee) {
     console.log(value);
   }
+  
+  onSelectFile(event) {
+    if (event.target.files.length > 0)
+    {
+      const file = event.target.files[0];
+      this.userFile = file;
+    }
 
-
+}
 }
 

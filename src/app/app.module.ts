@@ -52,7 +52,7 @@ import { AttestationEmployeeComponent } from './components/attestation/attestati
 import { StageComponent } from './components/stage/stage.component';
 import { StageCreateComponent } from './components/stage/stage-create/stage-create.component';
 import { StageListComponent } from './components/stage/stage-list/stage-list.component';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TypeCongesComponent } from './components/type-conges/type-conges.component';
 import { TypeCongeCreateComponent } from './components/type-conges/type-conge-create/type-conge-create.component';
 import { TypeCongeListComponent } from './components/type-conges/type-conge-list/type-conge-list.component';
@@ -67,19 +67,12 @@ import { DesignationCreateComponent } from './components/designations/designatio
 import { DesignationListComponent } from './components/designations/designation-list/designation-list.component';
 
 import { from } from 'rxjs';
-<<<<<<< HEAD
-import { UserAuth } from './controller/model/user-auth';
-import { InterceptorService } from './controller/service/auth/interceptor.service';
-import { AuthGuard } from './controller/service/auth/auth.guard';
 
- import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-=======
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserAuth } from './controller/model/user-auth';
 import { InterceptorService } from './controller/service/auth/interceptor.service';
 import { AuthGuard } from './controller/service/auth/auth.guard';
->>>>>>> 0889e2f5d6b703daac1b6ec5e182d3ca51c0b847
 
 
 

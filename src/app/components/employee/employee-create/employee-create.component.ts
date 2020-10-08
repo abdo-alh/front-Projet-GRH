@@ -7,7 +7,9 @@ import { EmployeeService } from '../../../controller/service/employee.service';
 
 @Component({
   selector: 'app-employee-create',
-  templateUrl: './employee-create.component.html'
+  templateUrl: './employee-create.component.html',
+  styleUrls: ['./employee-create.component.css']
+
 })
 export class EmployeeCreateComponent implements OnInit {
 

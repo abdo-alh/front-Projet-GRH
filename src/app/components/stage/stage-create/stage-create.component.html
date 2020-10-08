@@ -4,10 +4,11 @@
             <strong>Créer un stage</strong>
         </div>
         <div class="card-body">
+            <form #stageForm="ngForm" (ngSubmit)="save(ngForm.value)" >
             <div class="form-group">
                 <label for="raison">Raison</label>
-                <select name="raison" id="raison" [(ngModel)]="stage.raison" class="form-control" #mySelect
-                    (change)='onOptionsSelected(mySelect.value)'>
+                <select name="raison" #raison="ngModel" id="raison" [(ngModel)]="stage.raison" class="form-control" #mySelect
+                    (change)='onOptionsSelected(mySelect.value)'required >
                     <option value="">Sélectionnez...</option>
                     <option *ngFor="let r of raisons;" [ngValue]="r.libelle">
                         {{ r.libelle }} 
@@ -16,8 +17,8 @@
             </div>
             <div class="form-group">
                 <label for="etat">Etat</label>
-                <select name="etat" id="etat" [(ngModel)]="stage.etat" class="form-control" #mySelect
-                    (change)='onOptionsSelected(mySelect.value)'>
+                <select name="etat" #etat="ngModel" id="etat" [(ngModel)]="stage.etat" class="form-control" #mySelect
+                    (change)='onOptionsSelected(mySelect.value)' required>
                     <option value="">Sélectionnez...</option>
                     <option *ngFor="let r of etats;" [ngValue]="r.libelle">
                         {{ r.libelle }} 
@@ -30,8 +31,8 @@
             </div> -->
             <div class="form-group">
                 <label for="encadrent">Encadrant</label>
-                <select name="encadrent" id="encadrent" [(ngModel)]="stage.encadrent" class="form-control" #mySelect
-                    (change)='onOptionsSelected(mySelect.value)'>
+                <select name="encadrent" #encadrent="ngModel" id="encadrent" [(ngModel)]="stage.encadrent" class="form-control" #mySelect
+                    (change)='onOptionsSelected(mySelect.value)' required>
                     <option value="">Sélectionnez...</option>
                     <option *ngFor="let e of employees;" [ngValue]="e">
                         {{ e.nom }} {{ e.prenom }}
@@ -39,11 +40,12 @@
                 </select>
             </div>
             <div class="card-footer">
-                <button type="submit" (click)="save()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>
+                <button type="submit" [disabled]="!stageForm.valid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>
                     Save</button>
                 <button type="reset" (click)="generatorPdf('download')" class="btn btn-sm btn-danger"><i
                         class="fa fa-ban"></i> Reset</button>
             </div>
+        </form>
         </div>
     </div>
 
@@ -55,32 +57,33 @@
             <strong>Créer un Equipe</strong>
         </div>
         <div class="card-body">
+          <form #equipeItemForm="ngForm" (ngSubmit)="save(equipeItemForm.value)" >
             <div class="form-group">
                 <label for="raison">Date Debut</label>
-                <input type="date" [(ngModel)]="equipeItem.dateDebut" class="form-control" id="dateDebut"
-                    placeholder="Entrer date de debut stage">
+                <input type="date" name="dateDebut" #dateDebut="ngModel" [(ngModel)]="equipeItem.dateDebut" class="form-control" id="dateDebut"
+                    placeholder="Entrer date de debut stage" required>
             </div>
             <div class="form-group">
                 <label for="etat">Date Fin</label>
-                <input type="date" [(ngModel)]="equipeItem.dateFin" class="form-control" id="dateFin"
-                    placeholder="Entrer date de fin stage">
+                <input type="date" name="dateFin" #dateFin="ngModel" [(ngModel)]="equipeItem.dateFin" class="form-control" id="dateFin"
+                    placeholder="Entrer date de fin stage" required>
             </div>
 
             <div class="form-group">
                 <label for="etat">Upload CV</label>
-                <input type="file" [(ngModel)]="equipeItem.emCv" class="form-control" id="cv" placeholder="upload cv">
+                <input type="file" name="emCv" #emCv="ngModel" [(ngModel)]="equipeItem.emCv" class="form-control" id="cv" placeholder="upload cv" required>
             </div>
 
 
             <div class="form-group">
                 <label for="etat">Date Recu Cv</label>
-                <input type="date" [(ngModel)]="equipeItem.dateRecuCv" class="form-control" id="dateRecuCv"
-                    placeholder="date recu cv">
+                <input type="date" name="dateRecuCv" #dateRecuCv="ngModel" [(ngModel)]="equipeItem.dateRecuCv" class="form-control" id="dateRecuCv"
+                    placeholder="date recu cv" required>
             </div>
 
             <div class="form-group">
                 <label for="etat">note</label>
-                <input type="number" [(ngModel)]="equipeItem.note" class="form-control" id="note" placeholder="note">
+                <input type="number" name="note" #note="ngModel" [(ngModel)]="equipeItem.note" class="form-control" id="note" placeholder="note" required>
             </div>
 
             <!-- <div class="form-group">
@@ -89,8 +92,8 @@
             </div> -->
             <div class="form-group">
                 <label for="stagiaire">Stagiaire</label>
-                <select name="stagiaire" id="stagiaire" [(ngModel)]="stagiaire" class="form-control" #mySelect
-                    (change)='onOptionsSelected(mySelect.value)'>
+                <select name="stagiair" #stagiaire="ngModel" id="stagiaire" [(ngModel)]="equipeItem.stagiaire" class="form-control" #mySelect
+                    (change)='onOptionsSelected(mySelect.value)' required>
                     <option value="">Sélectionnez...</option>
                     <option *ngFor="let s of stagiaires;" [ngValue]="s">
                         {{ s.nom }} {{ s.prenom }}
@@ -98,10 +101,10 @@
                 </select>
             </div>
             <div class="card-footer">
-                <button type="submit" (click)="addItem()" class="btn btn-sm btn-primary"><i
-                        class="fa fa-dot-circle-o"></i>
+                <button type="submit" [disabled]="!equipeItemForm.valid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>
                     Save</button>
             </div>
+        </form>  
         </div>
     </div>
 </div>
