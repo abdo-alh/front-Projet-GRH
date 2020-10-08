@@ -1,58 +1,60 @@
-<div class="card">
-    <div class="card-header">
-        <strong>Créer un Equipe</strong>
-    </div>
-    <div class="card-body">
-        <div class="row">
-            <div class="form-group col-6">
-                <label for="raison">Date Debut</label>
-                <input type="date" [(ngModel)]="equipeItem.dateDebut" class="form-control" id="dateDebut"
-                    placeholder="Entrer date de debut stage">
-            </div>
-            <div class="form-group col-6">
-                <label for="etat">Date Fin</label>
-                <input type="date" [(ngModel)]="equipeItem.dateFin" class="form-control" id="dateFin"
-                    placeholder="Entrer date de fin stage">
-            </div>
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <strong>Créer un Equipe</strong>
         </div>
+        <div class="card-body">
+            <form #equipeItemForm="ngForm" (ngSubmit)="save(equipeItemForm.value)">
+                <div class="form-group">
+                    <label for="raison">Date Debut</label>
+                    <input type="date" name="dateDebut" #dateDebut="ngModel" [(ngModel)]="equipeItem.dateDebut"
+                        class="form-control" id="dateDebut" placeholder="Entrer date de debut stage" required>
+                </div>
+                <div class="form-group">
+                    <label for="etat">Date Fin</label>
+                    <input type="date" name="dateFin" #dateFin="ngModel" [(ngModel)]="equipeItem.dateFin"
+                        class="form-control" id="dateFin" placeholder="Entrer date de fin stage" required>
+                </div>
 
-        <div class="row">
-            <div class="form-group col-6">
-                <label for="etat">Upload CV</label>
-                <input type="file" [(ngModel)]="equipeItem.emCv" class="form-control" id="cv" placeholder="upload cv">
-            </div>
-    
-    
-            <div class="form-group col-6">
-                <label for="etat">Date Recu Cv</label>
-                <input type="date" [(ngModel)]="equipeItem.dateRecuCv" class="form-control" id="dateRecuCv"
-                    placeholder="date recu cv">
-            </div>
-        </div>
+                <div class="form-group">
+                    <label for="etat">Upload CV</label>
+                    <input type="file" name="emCv" #emCv="ngModel" [(ngModel)]="equipeItem.emCv" class="form-control"
+                        id="cv" placeholder="upload cv" required>
+                </div>
 
-        <div class="form-group">
-            <label for="etat">note</label>
-            <input type="number" [(ngModel)]="equipeItem.note" class="form-control" id="note" placeholder="note">
-        </div>
 
-        <!-- <div class="form-group">
+                <div class="form-group">
+                    <label for="etat">Date Recu Cv</label>
+                    <input type="date" name="dateRecuCv" #dateRecuCv="ngModel" [(ngModel)]="equipeItem.dateRecuCv"
+                        class="form-control" id="dateRecuCv" placeholder="date recu cv" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="etat">note</label>
+                    <input type="number" name="note" #note="ngModel" [(ngModel)]="equipeItem.note" class="form-control"
+                        id="note" placeholder="note" required>
+                </div>
+
+                <!-- <div class="form-group">
                 <label for="encadrant">Encadrant</label>
                 <input type="text" [(ngModel)]="stage.encadrent" class="form-control" id="encadrant" placeholder="Entrer L'encadrant">
             </div> -->
-        <div class="form-group">
-            <label for="stagiaire">Stagiaire</label>
-            <select name="stagiaire" id="stagiaire" [(ngModel)]="stagiaire" class="form-control" #mySelect
-                (change)='onOptionsSelected(mySelect.value)'>
-                <option value="">Sélectionnez...</option>
-                <option *ngFor="let s of stagiaires;" [ngValue]="s">
-                    {{ s.nom }} {{ s.prenom }}
-                </option>
-            </select>
-        </div>
-        <div class="card-footer">
-            <button type="submit" (click)="addItem()" class="btn btn-sm btn-primary pull-right"><i class="fa fa-dot-circle-o"></i>
-                Ajouter Un Equipe</button>
+                <div class="form-group">
+                    <label for="stagiaire">Stagiaire</label>
+                    <select name="stagiair" #stagiaire="ngModel" id="stagiaire" [(ngModel)]="equipeItem.stagiaire"
+                        class="form-control" #mySelect (change)='onOptionsSelected(mySelect.value)' required>
+                        <option value="">Sélectionnez...</option>
+                        <option *ngFor="let s of stagiaires;" [ngValue]="s">
+                            {{ s.nom }} {{ s.prenom }}
+                        </option>
+                    </select>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" [disabled]="!equipeItemForm.valid" class="btn btn-sm btn-primary"><i
+                            class="fa fa-dot-circle-o"></i>
+                        Save</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
-<!--/.col-->

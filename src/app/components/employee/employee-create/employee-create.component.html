@@ -1,51 +1,3 @@
-<<<<<<< HEAD
-<div class="card">
-    <div class="card-header">
-        <strong>Créer un Employé</strong>
-    </div>
-    <div class="card-body">
-        <div class="row">
-            <div class="form-group col-6">
-                <label for="company">Nom</label>
-                <input type="text" [(ngModel)]="employee.nom" class="form-control" id="company"
-                    placeholder="Entrer Le nom">
-            </div>
-            <div class="form-group col-6">
-                <label for="vat">Prenom</label>
-                <input type="text" [(ngModel)]="employee.prenom" class="form-control" id="vat"
-                    placeholder="Entrer Le prenom">
-            </div>
-        </div>
-        <div class="form-group col-8">
-            <label for="postal-code">Adresse</label>
-            <input type="text" [(ngModel)]="employee.adresse" class="form-control" id="postal-code"
-                placeholder="Entrer l'adresse">
-        </div>
-        <div class="row">
-            <div class="form-group col-6">
-                <label for="street">Email</label>
-                <input type="text" [(ngModel)]="employee.email" class="form-control" id="street"
-                    placeholder="Entrer L'email">
-            </div>
-            <div class="form-group col-6">
-                <label for="city">Password</label>
-                <input type="password" [(ngModel)]="employee.password" class="form-control" id="city"
-                    placeholder="Entrer le mot de passe">
-            </div>
-
-        </div>
-        <!--/.row-->
-        <div class="row">
-            <div class="form-group col-6">
-                <label for="country">Ville</label>
-                <input type="text" [(ngModel)]="employee.ville" class="form-control" id="country"
-                    placeholder="Entrer la ville">
-            </div>
-            <div class="form-group col-6">
-                <label for="street">Date Naissance</label>
-                <input type="date" [(ngModel)]="employee.datenaissance" class="form-control" id="street"
-                    placeholder="Entrer la date de naissance">
-=======
 <div class="col-12">
     <div class="card">
         <div class="card-header">
@@ -76,7 +28,6 @@
                     <input type="text" name="adresse" #adresse="ngModel"  [(ngModel)]="employee.adresse" class="form-control" id="adresse" placeholder="Entrer l'adresse" required>
                 </div>
             </div>
-            <!--/.row-->
             <div class="form-group">
                 <label for="ville">Ville</label>
                 <input type="text"  name="ville" #ville="ngModel" [(ngModel)]="employee.ville" class="form-control" id="ville" placeholder="Entrer la ville" required>
@@ -84,51 +35,29 @@
             <div class="form-group">
                 <label for="dateNaissance">Date Naissance</label>
                 <input type="date"  name="datenaissance" #datenaissance="ngModel" [(ngModel)]="employee.datenaissance" class="form-control" id="dateNaissance" placeholder="Entrer la date de naissance" required>
->>>>>>> 2ccf0c62c3b5f0e537d0aea4a81af3c54e0301c4
             </div>
-        </div>
-        <div class="row">
-            <div class="form-group col-6">
-                <label for="departement">Departement</label>
-<<<<<<< HEAD
-                <select name="departement" id="departement" [(ngModel)]="employee.departement" class="form-control"
-                    #mySelect (change)='onOptionsSelectedem(mySelect.value)'>
-=======
+        <div class="form-group">
+               <label for="departement"> Departement</label>
                 <select name="departement"  name="departement" #departement="ngModel" id="departement" [(ngModel)]="employee.departement" class="form-control" #mySelect
                     (change)='onOptionsSelectedem(mySelect.value)' required>
->>>>>>> 2ccf0c62c3b5f0e537d0aea4a81af3c54e0301c4
                     <option value="">Sélectionnez...</option>
                     <option *ngFor="let d of departements;" [ngValue]="d">
                         {{ d.libelle }}
                     </option>
                 </select>
             </div>
-            <div class="form-group col-6">
+            <div class="form-group">
                 <label for="designation">Designation</label>
-<<<<<<< HEAD
-                <select name="designation" id="designation" [(ngModel)]="employee.designation" class="form-control"
-                    #mySelect (change)='onOptionsSelectedeme(mySelect.value)'>
-=======
                 <select name="designation" name="designation" #designation="ngModel"  id="designation" [(ngModel)]="employee.designation" class="form-control" #mySelect
                     (change)='onOptionsSelectedeme(mySelect.value)' required>
->>>>>>> 2ccf0c62c3b5f0e537d0aea4a81af3c54e0301c4
                     <option value="">Sélectionnez...</option>
                     <option *ngFor="let e of designations;" [ngValue]="e">
                         {{ e.libelle }}
                     </option>
                 </select>
             </div>
-<<<<<<< HEAD
-        </div>
-
-        <div class="card-footer">
-            <div class="pull-right">
-                <button type="submit" (click)="save()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>
-                    Save</button>
-=======
             <div class="card-footer">
                 <button type="submit" [disabled]="!employeeForm.valid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save</button>
->>>>>>> 2ccf0c62c3b5f0e537d0aea4a81af3c54e0301c4
                 <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
             </div>
         </form>

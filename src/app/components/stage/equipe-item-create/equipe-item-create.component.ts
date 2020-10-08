@@ -7,7 +7,8 @@ import { StagiaireService } from '../../../controller/service/stagiaire.service'
 
 @Component({
   selector: 'app-equipe-item-create',
-  templateUrl: './equipe-item-create.component.html'
+  templateUrl: './equipe-item-create.component.html',
+  styleUrls: ['./equipe-item-create.component.css']
 })
 export class EquipeItemCreateComponent implements OnInit {
 

@@ -3,23 +3,6 @@
         <strong>Créer un Type de Congé</strong>
     </div>
     <div class="card-body">
-        <div class="form-group">
-            <label for="nom">type de conge</label>
-            <input type="text" [(ngModel)]="typeConge.libelle" class="form-control" id="libelle"
-                placeholder="Entrer Le type de conge">
-        </div>
-        <div class="form-group">
-            <label for="prenom">nombre des jours</label>
-            <input type="number" [(ngModel)]="typeConge.numberJour" class="form-control" id="numberjour"
-                placeholder="Entrer Les jours de conge">
-        </div>
-<<<<<<< HEAD
-        <div class="card-footer">
-            <button type="submit" (click)="save()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>
-                Save</button>
-            <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
-=======
-        <div class="card-body">
         <form #typeCongeForm="ngForm" (ngSubmit)="save(typeCongeForm.value)">
             <div class="form-group">
                 <label for="libelle">type de conge</label>
@@ -34,8 +17,6 @@
                 <button type="submit" [disabled]="!typeCongeForm.valid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o" ></i> Save</button>
                 <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
             </div>
-            </form>
->>>>>>> 2ccf0c62c3b5f0e537d0aea4a81af3c54e0301c4
-        </div>
+        </form>
     </div>
 </div>

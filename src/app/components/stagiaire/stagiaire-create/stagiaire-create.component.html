@@ -1,101 +1,49 @@
-<<<<<<< HEAD
-<div class="card">
-    <div class="card-header">
-        <strong>Créer un stagiaire</strong>
-    </div>
-    <div class="card-body">
-        <div class="row">
-            <div class="form-group col-6">
-                <label for="company">Nom</label>
-                <input type="text" [(ngModel)]="stagiaire.nom" class="form-control" id="company"
-                    placeholder="Entrer Le nom">
-=======
 <div class="col-12">
     <div class="card">
         <div class="card-header">
             <strong>Créer un stagiaire</strong>
         </div>
-        <div class="card-body">
+      <div class="card-body">
           <form #stagiaireForm="ngForm"  (ngSubmit)="save(stagiaireForm.value)">
             <div class="form-group">
                 <label for="company">Nom</label>
                 <input type="text" name="nom"  #nom="ngModel"  [(ngModel)]="stagiaire.nom" class="form-control" id="company" placeholder="Entrer Le nom" required>
->>>>>>> 2ccf0c62c3b5f0e537d0aea4a81af3c54e0301c4
             </div>
-            <div class="form-group col-6">
+            <div class="form-group">
                 <label for="vat">Prenom</label>
-<<<<<<< HEAD
-                <input type="text" [(ngModel)]="stagiaire.prenom" class="form-control" id="vat"
-                    placeholder="Entrer Le prenom">
-=======
                 <input type="text" name="prenom"  #prenom="ngModel" [(ngModel)]="stagiaire.prenom" class="form-control" id="vat" placeholder="Entrer Le prenom" required>
->>>>>>> 2ccf0c62c3b5f0e537d0aea4a81af3c54e0301c4
             </div>
-        </div>
-        <div class="form-group col-8">
-            <label for="postal-code">Adresse</label>
-            <input type="text" [(ngModel)]="stagiaire.adresse" class="form-control" id="postal-code"
-                placeholder="Entrer l'adresse">
-        </div>
-        <div class="row">
-            <div class="form-group col-6">
+            <div class="form-group">
                 <label for="street">Email</label>
-<<<<<<< HEAD
-                <input type="text" [(ngModel)]="stagiaire.email" class="form-control" id="street"
-                    placeholder="Entrer L'email">
-            </div>
-            <div class="form-group col-6">
-                <label for="city">Password</label>
-                <input type="password" [(ngModel)]="stagiaire.password" class="form-control" id="city"
-                    placeholder="Entrer le mot de passe">
-=======
                 <input type="email"  name="email"  #email="ngModel" [(ngModel)]="stagiaire.email" class="form-control" id="street" placeholder="Entrer L'email abc@abc.com" email required>
                 <small class="form-text text-muted" *ngIf="email.touched && !email.valid"> Enter Email Adress </small>
             </div>
             <div class="row">
-                <div class="form-group col-sm-8">
+                <div class="form-group col-sm-6">
                     <label for="city">Password</label>
                     <input type="password" name="password"  #password="ngModel" [(ngModel)]="stagiaire.password" class="form-control" id="city" placeholder="Entrer le mot de passe" required>
                 </div>
-                <div class="form-group col-sm-4">
+                <div class="form-group col-sm-6">
                     <label for="postal-code">Adresse</label>
                     <input type="text"  name="adresse"  #adresse="ngModel"  [(ngModel)]="stagiaire.adresse" class="form-control" id="postal-code" placeholder="Entrer l'adresse" required>
                 </div>
->>>>>>> 2ccf0c62c3b5f0e537d0aea4a81af3c54e0301c4
-            </div>
-
-        </div>
+          </div>
         <!--/.row-->
         <div class="row">
             <div class="form-group col-6">
                 <label for="country">Ville</label>
-<<<<<<< HEAD
-                <input type="text" [(ngModel)]="stagiaire.ville" class="form-control" id="country"
-                    placeholder="Entrer la ville">
-=======
                 <input type="text"  name="ville"  #ville="ngModel" [(ngModel)]="stagiaire.ville" class="form-control" id="country" placeholder="Entrer la ville" required>
->>>>>>> 2ccf0c62c3b5f0e537d0aea4a81af3c54e0301c4
             </div>
             <div class="form-group col-6">
                 <label for="street">Date Naissance</label>
-<<<<<<< HEAD
-                <input type="date" [(ngModel)]="stagiaire.datenaissance" class="form-control" id="street"
-                    placeholder="Entrer la date de naissance">
-=======
                 <input type="date"  name="datenaissance"  #datenaissance="ngModel" [(ngModel)]="stagiaire.datenaissance" class="form-control" id="street" placeholder="Entrer la date de naissance" required>
->>>>>>> 2ccf0c62c3b5f0e537d0aea4a81af3c54e0301c4
             </div>
         </div>
         <div class="row">
             <div class="form-group col-6">
                 <label for="departement">Departement</label>
-<<<<<<< HEAD
-                <select name="departement" id="departement" [(ngModel)]="stagiaire.departement" class="form-control"
-                    #mySelect (change)='onOptionsSelectedem(mySelect.value)'>
-=======
                 <select name="departement"  name="departement"  #departement="ngModel" id="departement" [(ngModel)]="stagiaire.departement" class="form-control" #mySelect
                     (change)='onOptionsSelectedem(mySelect.value)' required>
->>>>>>> 2ccf0c62c3b5f0e537d0aea4a81af3c54e0301c4
                     <option value="">Sélectionnez...</option>
                     <option *ngFor="let d of departements;" [ngValue]="d">
                         {{ d.libelle }}
@@ -104,34 +52,20 @@
             </div>
             <div class="form-group col-6">
                 <label for="designation">Designation</label>
-<<<<<<< HEAD
-                <select name="designation" id="designation" [(ngModel)]="stagiaire.designation" class="form-control"
-                    #mySelect (change)='onOptionsSelectedeme(mySelect.value)'>
-=======
                 <select name="designation"  name="designation"  #designation="ngModel" id="designation" [(ngModel)]="stagiaire.designation" class="form-control" #mySelect
                     (change)='onOptionsSelectedeme(mySelect.value)' required>
->>>>>>> 2ccf0c62c3b5f0e537d0aea4a81af3c54e0301c4
                     <option value="">Sélectionnez...</option>
                     <option *ngFor="let e of designations;" [ngValue]="e">
                         {{ e.libelle }}
                     </option>
                 </select>
             </div>
-<<<<<<< HEAD
-        </div>
-
-        <div class="card-footer">
-            <div class="pull-right">
-                <button type="submit" (click)="save()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>
-                    Save</button>
-=======
             <div class="card-footer">
                 <button type="submit" [disabled]="!stagiaireForm.valid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save</button>
->>>>>>> 2ccf0c62c3b5f0e537d0aea4a81af3c54e0301c4
                 <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
             </div>
-        </form>
         </div>
+      </form>
     </div>
 </div>
 <!--/.col-->
