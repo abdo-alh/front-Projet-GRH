@@ -34,6 +34,7 @@ export class DepartementService {
   public save() {
     this.http.post<Departement>(this.baseUrl + '/', this.departement).subscribe(data => {
       if (data != null) {
+        this.departement.id = data.id;
         this.departements.push(this.departement);
         this.departement = null;
       }

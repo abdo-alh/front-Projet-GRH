@@ -8,12 +8,24 @@
             <input type="text" [(ngModel)]="designation.libelle" class="form-control" id="libelle"
                 placeholder="Entrer La Designation">
         </div>
+<<<<<<< HEAD
         <div class="card-footer">
             <div class="pull-right">
                 <button type="submit" (click)="save()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>
                     Save</button>
+=======
+        <div class="card-body">
+            <form #designationForm="ngForm"  (ngSubmit)="save(designationForm.value)" >
+            <div class="form-group">
+                <label for="name">Designation</label>
+                <input type="text"  #libelle="ngModel" name="libelle" [(ngModel)]="designation.libelle" class="form-control" id="libelle" placeholder="Entrer La Designation" required>
+            </div>
+            <div class="card-footer">
+                <button type="submit" [disabled]="!designationForm.valid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save</button>
+>>>>>>> 2ccf0c62c3b5f0e537d0aea4a81af3c54e0301c4
                 <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
             </div>
+        </form>
         </div>
     </div>
 </div>

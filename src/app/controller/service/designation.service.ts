@@ -35,6 +35,7 @@ export class DesignationService {
   public save() {
     this.http.post<Designation>(this.baseUrl + '/', this.designation).subscribe(data => {
       if (data != null) {
+        this.designation.id = data.id;
         this.designations.push(this.designation);
         this.designation = null;
       }

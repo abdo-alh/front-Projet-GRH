@@ -21,6 +21,7 @@ export class TypeCongeCreateComponent implements OnInit {
   public save() {
     if (this.typeCongeService.typeConge.id != null) {
        this.typeCongeService.update();
+         //console.log("error");
        console.log("update");
     }
     else {
@@ -28,4 +29,8 @@ export class TypeCongeCreateComponent implements OnInit {
       console.log("save");
     }
   }
+
+  //onSubmit(form) {
+    //console.log(form.value)
+  //}
 }

@@ -16,6 +16,7 @@ export class StagiaireService {
   public save() {
     this.http.post<Stagiaire>(this.baseUrl + '/', this.stagiaire).subscribe(data => {
       if (data != null) {
+        this.stagiaire.id = data.id;
         this.stagiaires.push(this.stagiaire);
         this.stagiaire = null;
       }
