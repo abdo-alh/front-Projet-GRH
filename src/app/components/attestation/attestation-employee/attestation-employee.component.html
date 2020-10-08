@@ -1,15 +1,14 @@
 <h1>Attestation de travail</h1>
 
-<button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">Ajouter des Attestations d'Employé</button>
-
-<ng-template #mymodal let-modal>
+<ng-template #content let-modal>
     <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
-        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-            <span aria-hidden="true">×</span>
-        </button>
+      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
     <div class="modal-body">
+      <form>
         <div class="form-group">
             <label for="employee">L'employé</label>
             <select name="employee" id="employee" [(ngModel)]="employee" class="form-control" #mySelect
@@ -20,6 +19,14 @@
                 </option>
             </select>
         </div>
+      </form>
     </div>
-   
-</ng-template>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="saveHTML()">Exporter HTML</button>
+      <button type="button" class="btn btn-outline-dark" (click)="savePDF()">Exporter PDF</button>
+    </div>
+  </ng-template>
+  
+  <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Ajouter Attestation de Travail</button>
+  
+  <hr>

@@ -53,6 +53,10 @@ export class StagiaireService {
     return this.http.get<Stagiaire[]>(this.baseUrl+'/');
   }
 
+  public nbStagiaires(){
+    return this.http.get<number>(this.baseUrl+'/count/');
+  }
+
   public getAll() {
     this.http.get<Array<Stagiaire>>(this.baseUrl + '/').subscribe(data => {
       this.stagiaires = data;

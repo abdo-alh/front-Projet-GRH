@@ -1,62 +1,78 @@
-<div class="col-12">
-    <div class="card">
-        <div class="card-header">
-            <strong>Créer un stagiaire</strong>
-        </div>
-        <div class="card-body">
-            <div class="form-group">
+<div class="card">
+    <div class="card-header">
+        <strong>Créer un stagiaire</strong>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="form-group col-6">
                 <label for="company">Nom</label>
-                <input type="text" [(ngModel)]="stagiaire.nom" class="form-control" id="company" placeholder="Entrer Le nom">
+                <input type="text" [(ngModel)]="stagiaire.nom" class="form-control" id="company"
+                    placeholder="Entrer Le nom">
             </div>
-            <div class="form-group">
+            <div class="form-group col-6">
                 <label for="vat">Prenom</label>
-                <input type="text" [(ngModel)]="stagiaire.prenom" class="form-control" id="vat" placeholder="Entrer Le prenom">
+                <input type="text" [(ngModel)]="stagiaire.prenom" class="form-control" id="vat"
+                    placeholder="Entrer Le prenom">
             </div>
-            <div class="form-group">
+        </div>
+        <div class="form-group col-8">
+            <label for="postal-code">Adresse</label>
+            <input type="text" [(ngModel)]="stagiaire.adresse" class="form-control" id="postal-code"
+                placeholder="Entrer l'adresse">
+        </div>
+        <div class="row">
+            <div class="form-group col-6">
                 <label for="street">Email</label>
-                <input type="text" [(ngModel)]="stagiaire.email" class="form-control" id="street" placeholder="Entrer L'email">
+                <input type="text" [(ngModel)]="stagiaire.email" class="form-control" id="street"
+                    placeholder="Entrer L'email">
             </div>
-            <div class="row">
-                <div class="form-group col-sm-8">
-                    <label for="city">Password</label>
-                    <input type="password" [(ngModel)]="stagiaire.password" class="form-control" id="city" placeholder="Entrer le mot de passe">
-                </div>
-                <div class="form-group col-sm-4">
-                    <label for="postal-code">Adresse</label>
-                    <input type="text" [(ngModel)]="stagiaire.adresse" class="form-control" id="postal-code" placeholder="Entrer l'adresse">
-                </div>
+            <div class="form-group col-6">
+                <label for="city">Password</label>
+                <input type="password" [(ngModel)]="stagiaire.password" class="form-control" id="city"
+                    placeholder="Entrer le mot de passe">
             </div>
-            <!--/.row-->
-            <div class="form-group">
+
+        </div>
+        <!--/.row-->
+        <div class="row">
+            <div class="form-group col-6">
                 <label for="country">Ville</label>
-                <input type="text" [(ngModel)]="stagiaire.ville" class="form-control" id="country" placeholder="Entrer la ville">
+                <input type="text" [(ngModel)]="stagiaire.ville" class="form-control" id="country"
+                    placeholder="Entrer la ville">
             </div>
-            <div class="form-group">
+            <div class="form-group col-6">
                 <label for="street">Date Naissance</label>
-                <input type="date" [(ngModel)]="stagiaire.datenaissance" class="form-control" id="street" placeholder="Entrer la date de naissance">
+                <input type="date" [(ngModel)]="stagiaire.datenaissance" class="form-control" id="street"
+                    placeholder="Entrer la date de naissance">
             </div>
-            <div class="form-group">
+        </div>
+        <div class="row">
+            <div class="form-group col-6">
                 <label for="departement">Departement</label>
-                <select name="departement" id="departement" [(ngModel)]="stagiaire.departement" class="form-control" #mySelect
-                    (change)='onOptionsSelectedem(mySelect.value)'>
+                <select name="departement" id="departement" [(ngModel)]="stagiaire.departement" class="form-control"
+                    #mySelect (change)='onOptionsSelectedem(mySelect.value)'>
                     <option value="">Sélectionnez...</option>
                     <option *ngFor="let d of departements;" [ngValue]="d">
                         {{ d.libelle }}
                     </option>
                 </select>
             </div>
-            <div class="form-group">
+            <div class="form-group col-6">
                 <label for="designation">Designation</label>
-                <select name="designation" id="designation" [(ngModel)]="stagiaire.designation" class="form-control" #mySelect
-                    (change)='onOptionsSelectedeme(mySelect.value)'>
+                <select name="designation" id="designation" [(ngModel)]="stagiaire.designation" class="form-control"
+                    #mySelect (change)='onOptionsSelectedeme(mySelect.value)'>
                     <option value="">Sélectionnez...</option>
                     <option *ngFor="let e of designations;" [ngValue]="e">
                         {{ e.libelle }}
                     </option>
                 </select>
             </div>
-            <div class="card-footer">
-                <button type="submit" (click)="save()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save</button>
+        </div>
+
+        <div class="card-footer">
+            <div class="pull-right">
+                <button type="submit" (click)="save()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>
+                    Save</button>
                 <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
             </div>
         </div>

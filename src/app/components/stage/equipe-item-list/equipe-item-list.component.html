@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-header">
+        <i class="fa fa-align-justify"></i> Liste des Equipe Item
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date Debut</th>
+                    <th>Date Fin</th>
+                    <th>Upload Cv</th>
+                    <th>Date Recu Cv</th>
+                    <th>Note</th>
+                    <th>Stagiaire</th>
+                    <th>status</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of equipeItems; let i = index">
+                    <td>{{ e.dateDebut }}</td>
+                    <td>{{ e.dateFin }}</td>
+                    <td>{{ e.emCv }}</td>
+                    <td>{{ e.dateRecuCv }}</td>
+                    <td>{{ e.note }}</td>
+                    <td>{{ stagiaire.nom }} {{ stagiaire.prenom }}</td>
+                    <td><span class="badge badge-success">Active</span></td>
+                    <td>
+                        <button class="btn btn-success btn-xs fa fa-info" (click)="find(i)"></button>
+                        <button class="btn btn-success btn-xs fa fa-trash" (click)="delete(i)"></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

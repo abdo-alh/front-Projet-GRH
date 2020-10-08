@@ -8,6 +8,7 @@ export class User {
     adresse:String;
     ville:String;
     datenaissance:Date;
+    cin:string;
 
     public constructor(){
         

@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
+import { StagiaireService } from '../../controller/service/stagiaire.service';
+import { EmployeeService } from '../../controller/service/employee.service';
+import { StageService } from '../../controller/service/stage.service';
+import { DemandeCongeService } from '../../controller/service/demande-conge.service';
 
 @Component({
   templateUrl: 'dashboard.component.html'
@@ -8,6 +12,10 @@ import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 export class DashboardComponent implements OnInit {
 
   radioModel: string = 'Month';
+  nbStagiaires;
+  nbEmployees;
+  nbConges;
+  nbStages;
 
   // lineChart1
   public lineChart1Data: Array<any> = [
@@ -377,7 +385,30 @@ export class DashboardComponent implements OnInit {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
+  constructor(private stagiaireService:StagiaireService,private employeeService:EmployeeService,private stageService:StageService,private demandeCongeService:DemandeCongeService){
+
+  }
+
   ngOnInit(): void {
+    this.employeeService.nbEmployees().subscribe(
+      data=>{
+        this.nbEmployees = data;
+      })
+    this.stagiaireService.nbStagiaires().subscribe(
+      data=>{
+        this.nbStagiaires = data;
+      }
+    )
+    this.stageService.nbStages().subscribe(
+      data=>{
+        this.nbStages = data;
+      }
+    )
+    this.demandeCongeService.nbConges().subscribe(
+      data=>{
+        this.nbConges = data;
+      }
+    )
     // generate random values for mainChart
     for (let i = 0; i <= this.mainChartElements; i++) {
       this.mainChartData1.push(this.random(50, 200));

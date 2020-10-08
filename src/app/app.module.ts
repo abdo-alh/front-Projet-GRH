@@ -71,6 +71,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserAuth } from './controller/model/user-auth';
 import { InterceptorService } from './controller/service/auth/interceptor.service';
 import { AuthGuard } from './controller/service/auth/auth.guard';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { BasicAuthHtppInterceptorService } from './controller/service/auth/basic-auth.service';
+import { EquipeItemCreateComponent } from './components/stage/equipe-item-create/equipe-item-create.component';
+import { EquipeItemListComponent } from './components/stage/equipe-item-list/equipe-item-list.component';
 
 
 
@@ -122,8 +126,10 @@ import { AuthGuard } from './controller/service/auth/auth.guard';
     DepartementListComponent,
     DesignationsComponent,
     DesignationCreateComponent,
-    DesignationListComponent
-   
+    DesignationListComponent,
+    UserProfileComponent,
+    EquipeItemCreateComponent,
+    EquipeItemListComponent
   ],
   providers: [{
     provide: LocationStrategy,
@@ -131,7 +137,7 @@ import { AuthGuard } from './controller/service/auth/auth.guard';
 
   }, {
     provide: HTTP_INTERCEPTORS,
-    useClass: InterceptorService,
+    useClass: BasicAuthHtppInterceptorService,
     multi: true
   },
   AuthGuard],

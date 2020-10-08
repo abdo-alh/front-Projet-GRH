@@ -92,6 +92,10 @@ export class StageService {
     });
   }
 
+  public nbStages() {
+    return this.http.get<number>(this.baseUrl + '/count/');
+  }
+
   get stages(): Array<Stage> {
     return this._stages;
   }

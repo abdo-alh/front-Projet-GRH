@@ -19,6 +19,7 @@ import { P500Component } from './views/error/500.component';
 
 import { DepartementsComponent } from './components/departements/departements.component';
 import { DesignationsComponent } from './components/designations/designations.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 export const routes: Routes = [
   {
@@ -74,6 +75,10 @@ export const routes: Routes = [
       {
         path: 'stagiaire',
         component: StagiaireComponent
+      },
+      {
+        path: 'user-profile',
+        component: UserProfileComponent
       },
       {
         path: 'stage',

@@ -28,6 +28,10 @@ export class DemandeCongeService {
     return this.http.get<DemandeConge[]>(this.baseUrl+'/');
   }
 
+  public nbConges(){
+    return this.http.get<number>(this.baseUrl+'/count/');
+  }
+
   public update() {
     this.http.put<number>(this.baseUrl + '/update/', this.demandeConge).subscribe(data => {
       if (data > 0) {
