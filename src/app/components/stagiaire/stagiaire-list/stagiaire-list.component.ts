@@ -32,6 +32,7 @@ export class StagiaireListComponent implements OnInit {
  private clone(stagiaire: Stagiaire){
    const e = new Stagiaire();
    e.id = stagiaire.id;
+   e.cin = stagiaire.cin;
    e.nom = stagiaire.nom;
    e.prenom = stagiaire.prenom;
    e.email = stagiaire.email;

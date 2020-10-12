@@ -31,6 +31,7 @@ export class EmployeeListComponent implements OnInit {
   private clone(employee: Employee){
     const e = new Employee();
     e.id = employee.id;
+    e.cin = employee.cin;
     e.nom = employee.nom;
     e.prenom = employee.prenom;
     e.email = employee.email;

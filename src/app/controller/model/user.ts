@@ -1,6 +1,7 @@
 export class User {
 
     public id:number;
+    cin:String;
     nom:String;
     prenom:String;
     email:String;
@@ -8,7 +9,7 @@ export class User {
     adresse:String;
     ville:String;
     datenaissance:Date;
-    cin:string;
+   
 
     public constructor(){
         
