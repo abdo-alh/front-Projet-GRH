@@ -50,7 +50,7 @@
                     </select>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" [disabled]="!equipeItemForm.valid" class="btn btn-sm btn-primary"><i
+                    <button (click)="addItem()" [disabled]="!equipeItemForm.valid" class="btn btn-sm btn-primary"><i
                             class="fa fa-dot-circle-o"></i>
                         Save</button>
                 </div>

@@ -21,11 +21,13 @@ export class DemandeCongeCreateComponent implements OnInit {
 
   employee: Employee = new Employee();
   employees: Employee[];
+  selectedFiles: FileList;
+  currentFile: File;
 
-   userFile ;
+  userFile;
 
   constructor(private demandeCongeService: DemandeCongeService, private typeCongeService: TypeCongeService,
-    private employeeService: EmployeeService,private formBuilder: FormBuilder) { }
+    private employeeService: EmployeeService, private formBuilder: FormBuilder) { }
 
   private div2: boolean = true;
   private div5: boolean = false;
@@ -130,7 +132,7 @@ export class DemandeCongeCreateComponent implements OnInit {
     }
     else {
       //this.uploadFile();
-      this.demandeCongeService.save();
+      this.demandeCongeService.save(this.currentFile);
     }
   }
 
@@ -170,14 +172,12 @@ export class DemandeCongeCreateComponent implements OnInit {
   public onOptionsSelectedem(value: Employee) {
     console.log(value);
   }
-  
-  onSelectFile(event) {
-    if (event.target.files.length > 0)
-    {
-      const file = event.target.files[0];
-      this.userFile = file;
-    }
 
-}
+  onFileSelected(event) {
+    this.selectedFiles = event.target.files;
+    this.currentFile = this.selectedFiles.item(0);
+    this.selectedFiles = undefined;
+
+  }
 }
 

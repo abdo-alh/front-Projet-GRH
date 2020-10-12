@@ -78,9 +78,9 @@
                     placeholder="Entrer la raison">
             </div>
             <div class="form-group" *ngIf="div5">
-                <label for="etat">Upload certificat</label>
-                <input type="file"  class="form-control" required name="certificat" (change)="onFileSelected($event)" [(ngModel)]="demandeConge.certificat" id="certificat"
-                    placeholder="certificat">
+                <label for="certificat">Upload certificat</label>
+                <input type="file"  class="form-control" required name="nomCertificat" (change)="onFileSelected($event)" id="certificat"
+                    placeholder="certificat" [(ngModel)]="demandeConge.nomCertificat">
             </div>
             <!-- <div class="form-group" *ngIf="div5">
                 <label>chemin : </label>

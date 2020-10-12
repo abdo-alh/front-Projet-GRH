@@ -16,11 +16,11 @@
                         <th>Raison</th>
                         <th>Certificat</th>
                         <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let d of demandeConges; let i = index">
-                            
+                    <tr *ngFor="let d of demandeConges; let i = index">                            
                         <td> {{ d.employee.nom }} {{ d.employee.prenom }}</td>
                         <td> {{ d.typeConge.libelle }} </td>
                         <td> {{ d.dateDebut }} </td>
@@ -28,7 +28,7 @@
                         <td> {{ d.duree }} </td>
                         <td> {{ d.horaire }} </td>
                         <td> {{ d.raison }} </td>
-                        <td> {{ d.certificat }} </td> 
+                        <td> <a href="http://localhost:8090/tp-jwt/demandeConge/download/{{ d.nomCertificat }}">{{ d.nomCertificat }}</a> </td> 
                         <td> {{ d.status }} </td>
                         <td>
                         <button class="btn btn-sm btn-warning mr-2" (click)="update(d)"><i

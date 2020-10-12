@@ -13,8 +13,11 @@ export class DemandeCongeService {
   constructor(private http: HttpClient) { }
 
   
-  public save() {
-    this.http.post<DemandeConge>(this.baseUrl + '/', this.demandeConge).subscribe(data => {
+  public save(file:File) {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    formData.append('demandeConge', JSON.stringify(this.demandeConge));
+    this.http.post<DemandeConge>(this.baseUrl + '/', formData).subscribe(data => {
       if (data != null) {
         this.demandeConge.id = data.id;
         this.demandeConges.push(this.demandeConge);
@@ -24,6 +27,10 @@ export class DemandeCongeService {
         console.log('Erreur insertion : ' + data);
       }
     });
+  }
+
+  public load(nomCertificat:string){
+    return this.http.get(this.baseUrl+'/download/'+nomCertificat);
   }
 
 

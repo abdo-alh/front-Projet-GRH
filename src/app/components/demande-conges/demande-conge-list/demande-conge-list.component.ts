@@ -15,21 +15,29 @@ export class DemandeCongeListComponent implements OnInit {
     this.demandeCongeService.getAll();
   }
 
-  get demandeConges(): Array<DemandeConge>{
+  get demandeConges(): Array<DemandeConge> {
     return this.demandeCongeService.demandeConges;
   }
 
   public update(demandeConge: DemandeConge) {
     this.demandeCongeService.demandeConge = this.clone(demandeConge);
   }
-  
+
   public delete(id: number, index: number) {
     if (confirm('Voulez-vous vraiment faire cette action?')) {
       this.demandeCongeService.delete(id, index);
     }
   }
 
-  private clone(demandeConge: DemandeConge){
+  public load(nomCertificat: string) {
+    this.demandeCongeService.load(nomCertificat).subscribe(
+      data => {
+        console.log(data);
+      }
+    )
+  }
+
+  private clone(demandeConge: DemandeConge) {
     const d = new DemandeConge();
     d.id = demandeConge.id;
     d.employee = demandeConge.employee;
@@ -39,7 +47,7 @@ export class DemandeCongeListComponent implements OnInit {
     d.duree = demandeConge.duree;
     d.horaire = demandeConge.horaire;
     d.raison = demandeConge.raison;
-    d.certificat = demandeConge.certificat;
+    d.nomCertificat = demandeConge.nomCertificat;
     d.status = demandeConge.status;
     return d;
   }

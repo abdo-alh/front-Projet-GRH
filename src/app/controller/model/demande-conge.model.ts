@@ -10,7 +10,7 @@ export class DemandeConge {
    duree:number;
    horaire:string;
    raison:string;
-   certificat:string;
+   nomCertificat:string;
    status:string;
    //public certificatFile:CertificatFile = new CertificatFile();
 

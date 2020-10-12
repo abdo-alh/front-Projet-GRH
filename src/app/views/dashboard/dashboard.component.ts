@@ -389,7 +389,7 @@ export class DashboardComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
+  initAll(){
     this.employeeService.nbEmployees().subscribe(
       data=>{
         this.nbEmployees = data;
@@ -409,6 +409,10 @@ export class DashboardComponent implements OnInit {
         this.nbConges = data;
       }
     )
+  }
+
+  ngOnInit(): void {
+    this.initAll();
     // generate random values for mainChart
     for (let i = 0; i <= this.mainChartElements; i++) {
       this.mainChartData1.push(this.random(50, 200));
