@@ -13,9 +13,6 @@ import { StagiaireService } from '../../../controller/service/stagiaire.service'
 export class EquipeItemCreateComponent implements OnInit {
 
   //This is stage Create Component
-
-  encadrent: Employee = new Employee();
-  employees: Employee[];
   stagiaires:Stagiaire[];
   raisons = [{
     'libelle':'Stage Pfe'
@@ -34,10 +31,9 @@ export class EquipeItemCreateComponent implements OnInit {
     'libelle':'Terminer'
   }];
 
-  constructor(private stageService: StageService, private employeeService: EmployeeService,private stagiaireService:StagiaireService) { }
+  constructor(private stageService: StageService,private stagiaireService:StagiaireService) { }
 
   ngOnInit(): void {
-    this.getAllEmployees();
     this.getAllStagiaires();
   }
 
@@ -71,18 +67,6 @@ export class EquipeItemCreateComponent implements OnInit {
 
   public set stagiaire(value:Stagiaire){
     this.stageService.stagiaireCreate = value;
-  }
-
-  
-  public getAllEmployees() {
-    this.employeeService.getAllEmployees().subscribe(
-      data => {
-        this.employees = data;
-      },
-      error => {
-        console.log(error);
-      }
-    )
   }
 
   public getAllStagiaires(){

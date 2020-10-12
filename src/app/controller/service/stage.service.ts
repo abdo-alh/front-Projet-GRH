@@ -24,6 +24,7 @@ export class StageService {
         console.log(data);
         this.stageCreate = new Stage();
         this.itemCreate = new EquipeItem();
+        this.stagiaireCreate = new Stagiaire();
       }
       else {
         console.log('Erreur insertion : ' + data);

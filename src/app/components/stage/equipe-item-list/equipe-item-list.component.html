@@ -23,7 +23,7 @@
                     <td>{{ e.emCv }}</td>
                     <td>{{ e.dateRecuCv }}</td>
                     <td>{{ e.note }}</td>
-                    <td>{{ stagiaire.nom }} {{ stagiaire.prenom }}</td>
+                    <td>{{ e.stagiaire.nom }} {{ e.stagiaire.prenom }}</td>
                     <td><span class="badge badge-success">Active</span></td>
                     <td>
                         <button class="btn btn-success btn-xs fa fa-info" (click)="find(i)"></button>

@@ -1,127 +1,117 @@
-<div class="col-12">
-    <div class="card">
-        <div class="card-header">
-            <strong>Demande Des Conges</strong>
-        </div>
-        <div class="card-body">
-         <form #demandeCongeForm="ngForm"  (ngSubmit)="save(demandeCongeForm.value)" > 
-            <div class="form-group">
-                <label for="employee">Employee</label>
-                <select name="employee" #employee="ngModel" id="employee" [(ngModel)]="demandeConge.employee" class="form-control" #mySelect
-                    (change)='onOptionsSelectedem(mySelect.value)' required >
-                    <option value="">Sélectionnez...</option>
-                    <option *ngFor="let e of employees;" [ngValue]="e">
-                        {{ e.nom }} {{ e.prenom }}
-                    </option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="typeConge">Type Conge</label>
-                <select name="typeConge" name="typeConge" #typeConge="ngModel" id="typeConge" [(ngModel)]="demandeConge.typeConge" class="form-control"
-                    #mySelect (change)='onOptionsSelected(mySelect.value)' required >
-                    <option value="">Sélectionnez...</option>
-                    <option *ngFor="let t of typeConges;" [ngValue]="t">
-                        {{ t.libelle }}
-                    </option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="dateDebut">Touts Les heurs</label>
-                <input type="radio" (change)="toggle()" id="complete" name="touts" value="Touts Les Heurs">
-                <!--<button (click)="" > touts </button>-->
-            </div>
-            <div class="form-group">
-                <label for="dateDebut">Journee Completes</label>
-                <input type="radio" (change)="togglee()" id="complete" name="touts" value="Journee Completes">
-                <!--<button (click)="togglee()" > touts </button>-->
-            </div>
-            <div class="form-group">
-                <label for="dateDebut">Au Dessus d un Jour</label>
-                <input type="radio" (change)="togglees()" id="dessus" name="touts" value="Au Dessus d un Jour">
-            </div>
-            <div class="form-group" *ngIf="div1">
-                <label for="dateDebut">Date Debut</label>
-                <input type="date"  name="dateDebut" #dateDebut="ngModel" [(ngModel)]="demandeConge.dateDebut" class="form-control" id="dateDebut"
-                    placeholder="Entrer la date de Debut" required>
-            </div>
-            <div class="form-group" *ngIf="div2">
-                <label for="dateFin">Date Fin</label>
-                <input type="date"  name="dateFin" #dateFin="ngModel" [(ngModel)]="demandeConge.dateFin" class="form-control" id="dateFin"
-                    placeholder="Entrer la date de Debut" required>
-            </div>
-            <div class="form-group" *ngIf="div3">
-                <label for="duree">Duree</label>
-                <select name="duree"  #duree="ngModel" id="duree" [(ngModel)]="demandeConge.duree" class="form-control" required >
-                    <option value="">Sélectionnez...</option>
-                    <option> 1 </option>
-                    <option> 2 </option>
-                    <option> 3 </option>
-                    <option> 4 </option>
-                    <option> 5 </option>
-                    <option> 6 </option>
-                    <option> 7 </option>
-                    <option> 8 </option>
-                </select>
-            </div>
-
-            <div class="form-group" *ngIf="div4">
-                <label for="horaire">Horaire</label>
-                <select name="horaire" #horaire="ngModel" id="horaire" [(ngModel)]="demandeConge.horaire" class="form-control" required >
-                    <option value="">Sélectionnez...</option>
-                    <option> Matin </option>
-                    <option> Soir </option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="raison">Raison</label>
-                <input type="text"  name="raison" #raison="ngModel" [(ngModel)]="demandeConge.raison" class="form-control" id="raison"
-                    placeholder="Entrer la raison" required>
-            </div>
-            <div class="form-group" *ngIf="div5">
-                <label for="certificat">Upload certificat</label>
-                <input type="file"  class="form-control" required name="nomCertificat" (change)="onFileSelected($event)" id="certificat"
-                    placeholder="certificat" [(ngModel)]="demandeConge.nomCertificat">
-            </div>
-            <!-- <div class="form-group" *ngIf="div5">
-                <label>chemin : </label>
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <button class="ui-fileupload"
-                                style=" width: 290px;border: none; background-color: #0062cc; color: white; ">
-                                <i class="fa fa-upload" aria-hidden="true"></i>
-                                <label for="file" class="label-file" id="titreFile"
-                                    style="color: white;margin-bottom: 0px">Choisir</label>
-                                <input id="file" class="input-file" type="file" (change)="onFileChanged($event)">
-                            </button>
-                        </div>
-                        <div class="col-md-4">
-                            <label id="lebel1">
-                                pas de fichier selectionné!
-                            </label>
-                        </div>
-                        <div class="col-md-4">
-                            <i class="fa fa-check" aria-hidden="true" id="fa"></i>
-                            <label id="label2"> </label>
-                        </div>
-                    </div>
+<div class="card">
+    <div class="card-header">
+        <strong>Demande Des Conges</strong>
+    </div>
+    <div class="card-body">
+        <form #demandeCongeForm="ngForm" (ngSubmit)="save(demandeCongeForm.value)">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="employee">Employee</label>
+                    <select name="employee" #employee="ngModel" id="employee" [(ngModel)]="demandeConge.employee"
+                        class="form-control" #mySelect (change)='onOptionsSelectedem(mySelect.value)' required>
+                        <option value="">Sélectionnez...</option>
+                        <option *ngFor="let e of employees;" [ngValue]="e">
+                            {{ e.nom }} {{ e.prenom }}
+                        </option>
+                    </select>
                 </div>
-            </div> -->
-            <div class="form-group">
-                <label for="duree">Status</label>
-                <select name="status"  #status="ngModel" id="status" [(ngModel)]="demandeConge.status" class="form-control" required >
-                    <option value="">Sélectionnez...</option>
-                    <option> Aprove </option>
-                    <option> Not Aprove </option>
-                </select>
+                <div class="form-group col-md-6">
+                    <label for="typeConge">Type Conge</label>
+                    <select name="typeConge" name="typeConge" #typeConge="ngModel" id="typeConge"
+                        [(ngModel)]="demandeConge.typeConge" class="form-control" #mySelect
+                        (change)='onOptionsSelected(mySelect.value)' required>
+                        <option value="">Sélectionnez...</option>
+                        <option *ngFor="let t of typeConges;" [ngValue]="t">
+                            {{ t.libelle }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="dateDebut">Touts Les heurs</label>
+                    <input type="radio" (change)="toggle()" id="complete" name="touts" value="Touts Les Heurs">
+                    <!--<button (click)="" > touts </button>-->
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="dateDebut">Journee Completes</label>
+                    <input type="radio" (change)="togglee()" id="complete" name="touts" value="Journee Completes">
+                    <!--<button (click)="togglee()" > touts </button>-->
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="dateDebut">Au Dessus d un Jour</label>
+                    <input type="radio" (change)="togglees()" id="dessus" name="touts" value="Au Dessus d un Jour">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6" *ngIf="div1">
+                    <label for="dateDebut">Date Debut</label>
+                    <input type="date" name="dateDebut" #dateDebut="ngModel" [(ngModel)]="demandeConge.dateDebut"
+                        class="form-control" id="dateDebut" placeholder="Entrer la date de Debut" required>
+                </div>
+                <div class="form-group col-md-6" *ngIf="div2">
+                    <label for="dateFin">Date Fin</label>
+                    <input type="date" name="dateFin" #dateFin="ngModel" [(ngModel)]="demandeConge.dateFin"
+                        class="form-control" id="dateFin" placeholder="Entrer la date de Debut" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6" *ngIf="div3">
+                    <label for="duree">Duree</label>
+                    <select name="duree" #duree="ngModel" id="duree" [(ngModel)]="demandeConge.duree"
+                        class="form-control" required>
+                        <option value="">Sélectionnez...</option>
+                        <option> 1 </option>
+                        <option> 2 </option>
+                        <option> 3 </option>
+                        <option> 4 </option>
+                        <option> 5 </option>
+                        <option> 6 </option>
+                        <option> 7 </option>
+                        <option> 8 </option>
+                    </select>
+                </div>
+
+                <div class="form- col-md-6" *ngIf="div4">
+                    <label for="horaire">Horaire</label>
+                    <select name="horaire" #horaire="ngModel" id="horaire" [(ngModel)]="demandeConge.horaire"
+                        class="form-control" required>
+                        <option value="">Sélectionnez...</option>
+                        <option> Matin </option>
+                        <option> Soir </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="raison">Raison</label>
+                    <input type="text" name="raison" #raison="ngModel" [(ngModel)]="demandeConge.raison"
+                        class="form-control" id="raison" placeholder="Entrer la raison" required>
+                </div>
+                <div class="form-group col-md-4" *ngIf="div5">
+                    <label for="certificat">Upload certificat</label>
+                    <input type="file" class="form-control" required name="nomCertificat"
+                        (change)="onFileSelected($event)" id="certificat" placeholder="certificat"
+                        [(ngModel)]="demandeConge.nomCertificat">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="duree">Status</label>
+                    <select name="status" #status="ngModel" id="status" [(ngModel)]="demandeConge.status"
+                        class="form-control" required>
+                        <option value="">Sélectionnez...</option>
+                        <option> Aprove </option>
+                        <option> Not Aprove </option>
+                    </select>
+                </div>
             </div>
             <div class="card-footer">
-                <button type="submit" [disabled]="!demandeCongeForm.valid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>
-                    Save</button>
-                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+                <div class="pull-right">
+                    <button type="submit" [disabled]="!demandeCongeForm.valid" class="btn btn-sm btn-primary"><i
+                            class="fa fa-dot-circle-o"></i>
+                        Save</button>
+                    <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+                </div>
             </div>
         </form>
-        </div>
     </div>
 </div>
