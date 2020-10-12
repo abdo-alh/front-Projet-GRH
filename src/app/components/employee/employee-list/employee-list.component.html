@@ -6,6 +6,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>Cin</th>
                     <th>Nom</th>
                     <th>Prenom</th>
                     <th>Email</th>
@@ -20,6 +21,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let e of employees; let i = index">
+                    <td>{{ e.cin }}</td>
                     <td>{{ e.nom }}</td>
                     <td>{{ e.prenom }}</td>
                     <td>{{ e.email }}</td>
