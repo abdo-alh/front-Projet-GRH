@@ -92,19 +92,20 @@ export class DemandeCongeCreateComponent implements OnInit {
       this.div4 = true;
       this.div2 = false;
       this.div5 = false;
+
     }
 
   }
 
   togglee() {
     if (this.demandeConge.typeConge.libelle == 'maladie') {
-      this.div1 = false;
+      this.div1 = true;
       this.div3 = false;
       this.div4 = false;
       this.div2 = false;
       this.div5 = true;
     } else {
-      this.div1 = false;
+      this.div1 = true;
       this.div3 = false;
       this.div4 = false;
       this.div2 = false;

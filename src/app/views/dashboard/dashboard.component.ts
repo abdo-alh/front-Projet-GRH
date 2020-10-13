@@ -5,6 +5,8 @@ import { StagiaireService } from '../../controller/service/stagiaire.service';
 import { EmployeeService } from '../../controller/service/employee.service';
 import { StageService } from '../../controller/service/stage.service';
 import { DemandeCongeService } from '../../controller/service/demande-conge.service';
+import { TacheService } from '../../controller/service/tache.service';
+import { Tache } from '../../controller/model/tache.model';
 
 @Component({
   templateUrl: 'dashboard.component.html'
@@ -409,6 +411,7 @@ export class DashboardComponent implements OnInit {
         this.nbConges = data;
       }
     )
+    
   }
 
   ngOnInit(): void {
@@ -420,4 +423,5 @@ export class DashboardComponent implements OnInit {
       this.mainChartData3.push(65);
     }
   }
+
 }

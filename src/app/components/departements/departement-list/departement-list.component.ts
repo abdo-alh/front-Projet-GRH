@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DepartementService } from '../../../controller/service/departement.service';
 import { Departement } from '../../../controller/model/departement.model';
+import { TacheService } from '../../../controller/service/tache.service';
+import { Tache } from '../../../controller/model/tache.model';
 
 @Component({
   selector: 'app-departement-list',
@@ -37,5 +39,7 @@ export class DepartementListComponent implements OnInit {
     d.libelle = departement.libelle;
     return d;
   }
+
+  
 
 }
