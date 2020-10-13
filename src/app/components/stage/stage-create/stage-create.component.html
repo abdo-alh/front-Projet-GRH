@@ -3,7 +3,7 @@
         <strong>Créer un Stage</strong>
     </div>
     <div class="card-body">
-        <form #stageForm="ngForm" (ngSubmit)="save(ngForm.value)">
+        <form #stageForm="ngForm" (ngSubmit)="save()">
             <div class="form-group">
                 <label for="raison">Raison</label>
                 <select name="raison" #raison="ngModel" id="raison" [(ngModel)]="stage.raison" class="form-control"

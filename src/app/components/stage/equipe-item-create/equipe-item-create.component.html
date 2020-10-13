@@ -41,7 +41,7 @@
             </div> -->
                 <div class="form-group">
                     <label for="stagiaire">Stagiaire</label>
-                    <select name="stagiair" #stagiaire="ngModel" id="stagiaire" [(ngModel)]="equipeItem.stagiaire"
+                    <select name="stagiaire" id="stagiaire" [(ngModel)]="stagiaire"
                         class="form-control" #mySelect (change)='onOptionsSelected(mySelect.value)' required>
                         <option value="">Sélectionnez...</option>
                         <option *ngFor="let s of stagiaires;" [ngValue]="s">
