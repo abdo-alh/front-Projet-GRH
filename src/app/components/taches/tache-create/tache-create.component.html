@@ -9,16 +9,6 @@
                 <input type="text" #projet="ngModel" name="projet" [(ngModel)]="tache.projet" class="form-control" 
                 id="projet" placeholder="Entrer Le Projet" required >
             </div>
-            <div class="form-group">
-                <label for="employee">Projet Realiser Par</label>
-                <select name="employee" #employee="ngModel" id="employee" [(ngModel)]="tache.employee" class="form-control" #mySelect
-                    (change)='onOptionsSelectedem(mySelect.value)' required >
-                    <option value="">Sélectionnez...</option>
-                    <option *ngFor="let e of employees;" [ngValue]="e">
-                        {{ e.nom }} {{ e.prenom }}
-                    </option>
-                </select>
-            </div>
             <div class="card-footer">
                 <button type="submit" [disabled]="!tacheForm.valid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o" ></i> Save</button>
                 <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>

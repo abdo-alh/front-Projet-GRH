@@ -16,6 +16,8 @@ export class AuthenticationService {
   public authenticatedUser = new User();
   public authenticated: boolean = null;
 
+  public user : User
+
   constructor(
     private http: HttpClient,
     private router: Router
@@ -89,4 +91,5 @@ export class AuthenticationService {
     sessionStorage.removeItem('username');
     this.router.navigate(['/login']);
   }
+
 }

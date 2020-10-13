@@ -20,6 +20,7 @@ import { P500Component } from './views/error/500.component';
 import { DepartementsComponent } from './components/departements/departements.component';
 import { DesignationsComponent } from './components/designations/designations.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { TachesComponent } from './components/taches/taches.component';
 
 export const routes: Routes = [
   {
@@ -108,6 +109,10 @@ export const routes: Routes = [
         path:"designation",
         component: DesignationsComponent
       },
+      {
+          path:"tache",
+          component: TachesComponent
+       },
       {
         path: 'buttons',
         loadChildren: () => import('./views/buttons/buttons.module').then(m => m.ButtonsModule)

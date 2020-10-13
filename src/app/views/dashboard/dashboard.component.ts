@@ -9,7 +9,9 @@ import { TacheService } from '../../controller/service/tache.service';
 import { Tache } from '../../controller/model/tache.model';
 
 @Component({
-  templateUrl: 'dashboard.component.html'
+  templateUrl: 'dashboard.component.html',
+  styleUrls: ['dashboard.component.css']
+  
 })
 export class DashboardComponent implements OnInit {
 
@@ -387,7 +389,8 @@ export class DashboardComponent implements OnInit {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  constructor(private stagiaireService:StagiaireService,private employeeService:EmployeeService,private stageService:StageService,private demandeCongeService:DemandeCongeService){
+  constructor(private stagiaireService:StagiaireService,private employeeService:EmployeeService,private stageService:StageService,private demandeCongeService:DemandeCongeService,
+    private tacheService:TacheService,){
 
   }
 
@@ -421,6 +424,29 @@ export class DashboardComponent implements OnInit {
       this.mainChartData1.push(this.random(50, 200));
       this.mainChartData2.push(this.random(80, 100));
       this.mainChartData3.push(65);
+    }
+    this.tacheService.getUser();
+    this.tacheService.getAll();
+    
+  }
+
+  get taches(): Array<Tache> {
+    return this.tacheService.taches;
+  }
+
+  get tache(){
+    return this.tacheService.tache
+  }
+
+  public save() {
+    if (this.tacheService.tache.id != null) {
+       this.tacheService.update();
+         //console.log("error");
+       console.log("update");
+    }
+    else {
+      this.tacheService.save();
+      console.log("save");
     }
   }
 

@@ -1,10 +1,11 @@
 import { Employee } from './employee';
+import { User } from './user';
 
 export class Tache {
 
     id:number;
     projet:string;
-    employee:Employee;
+    employee:User;
 
     public constructor () {
 

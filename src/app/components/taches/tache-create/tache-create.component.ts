@@ -17,6 +17,7 @@ export class TacheCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllEmployees();
+    this.tacheService.getUser();
   }
 
   get tache(){

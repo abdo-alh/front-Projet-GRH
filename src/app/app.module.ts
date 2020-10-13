@@ -77,7 +77,9 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { BasicAuthHtppInterceptorService } from './controller/service/auth/basic-auth.service';
 import { EquipeItemCreateComponent } from './components/stage/equipe-item-create/equipe-item-create.component';
 import { EquipeItemListComponent } from './components/stage/equipe-item-list/equipe-item-list.component';
-
+import { TachesComponent } from './components/taches/taches.component';
+import { TacheCreateComponent } from './components/taches/tache-create/tache-create.component';
+import { TacheListComponent } from './components/taches/tache-list/tache-list.component';
 
 
 @NgModule({
@@ -131,7 +133,10 @@ import { EquipeItemListComponent } from './components/stage/equipe-item-list/equ
     DesignationListComponent,
     UserProfileComponent,
     EquipeItemCreateComponent,
-    EquipeItemListComponent
+    EquipeItemListComponent,
+    TachesComponent,
+    TacheCreateComponent,
+    TacheListComponent
   ],
   providers: [{
     provide: LocationStrategy,

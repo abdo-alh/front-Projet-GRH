@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Tache } from '../model/tache.model';
+import { User } from '../model/user';
+import { AuthenticationService } from './auth/authentification.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +11,16 @@ export class TacheService {
   private baseUrl = 'http://localhost:8090/tp-jwt/tache';
   private _tache: Tache = new Tache();
   private _taches: Array<Tache> = new Array<Tache>();
+  public user:User
 
-  constructor( private http:HttpClient ) { }
+  public getUser(){
+    let user = sessionStorage.getItem('username');
+    this.http.get<User>('http://localhost:8090/tp-jwt/auth/email/'+ user).subscribe(data =>{
+      this.user = data
+      console.log(data)
+    })
+  }
+  constructor( private http:HttpClient, private authService:AuthenticationService ) { }
 
   get tache(): Tache {
     if (this._tache == null) {
@@ -32,6 +42,8 @@ export class TacheService {
   }
 
   public save() {
+    this.tache.employee = this.user
+    console.log( this.tache.employee)
     this.http.post<Tache>(this.baseUrl + '/', this.tache).subscribe(data => {
       if (data != null) {
         this.tache.id = data.id;
