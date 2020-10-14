@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StageService } from '../../../controller/service/stage.service';
+import { StageComponent } from '../stage.component';
 
 @Component({
   selector: 'app-equipe-item-list',

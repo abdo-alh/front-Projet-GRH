@@ -5,13 +5,15 @@
     <div class="card-body">
         <form #tacheForm="ngForm" (ngSubmit)="save(tacheForm.value)">
             <div class="form-group">
-                <label for="libelle">projet</label>
+                <label for="libelle">Tache</label>
                 <input type="text" #projet="ngModel" name="projet" [(ngModel)]="tache.projet" class="form-control" 
                 id="projet" placeholder="Entrer Le Projet" required >
             </div>
             <div class="card-footer">
-                <button type="submit" [disabled]="!tacheForm.valid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o" ></i> Save</button>
+                <div class="pull-right">
+                    <button type="submit" [disabled]="!tacheForm.valid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o" ></i> Save</button>
                 <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+                </div>
             </div>
         </form>
     </div>
