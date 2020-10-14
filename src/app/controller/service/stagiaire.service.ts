@@ -40,8 +40,8 @@ export class StagiaireService {
   }
 
   public delete(id, index) {
-    this.http.delete<void>(this.baseUrl + '/delete/id/' + id).subscribe(data => {
-      if (data != null) {
+    this.http.delete<number>(this.baseUrl + '/delete/id/' + id).subscribe(data => {
+      if (data > 0) {
         this.stagiaires.splice(index, 1);
       }
       else {
