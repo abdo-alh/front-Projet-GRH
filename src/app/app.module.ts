@@ -80,6 +80,8 @@ import { EquipeItemListComponent } from './components/stage/equipe-item-list/equ
 import { TachesComponent } from './components/taches/taches.component';
 import { TacheCreateComponent } from './components/taches/tache-create/tache-create.component';
 import { TacheListComponent } from './components/taches/tache-list/tache-list.component';
+import { HolidaysComponent } from './components/holidays/holidays.component';
+import { HolidayCreateComponent } from './components/holidays/holiday-create/holiday-create.component';
 
 
 @NgModule({
@@ -136,7 +138,9 @@ import { TacheListComponent } from './components/taches/tache-list/tache-list.co
     EquipeItemListComponent,
     TachesComponent,
     TacheCreateComponent,
-    TacheListComponent
+    TacheListComponent,
+    HolidaysComponent,
+    HolidayCreateComponent
   ],
   providers: [{
     provide: LocationStrategy,

@@ -21,6 +21,7 @@ import { DepartementsComponent } from './components/departements/departements.co
 import { DesignationsComponent } from './components/designations/designations.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { TachesComponent } from './components/taches/taches.component';
+import { HolidaysComponent } from './components/holidays/holidays.component';
 
 export const routes: Routes = [
   {
@@ -113,6 +114,10 @@ export const routes: Routes = [
           path:"tache",
           component: TachesComponent
        },
+       {
+        path:"holiday",
+        component: HolidaysComponent
+     },
       {
         path: 'buttons',
         loadChildren: () => import('./views/buttons/buttons.module').then(m => m.ButtonsModule)

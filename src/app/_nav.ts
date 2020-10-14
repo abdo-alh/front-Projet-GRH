@@ -76,5 +76,10 @@ export const navItems: INavData[] = [
     name: 'Tache',
     url: '/tache',
     icon: 'icon-puzzle'
+  },
+  {
+    name: 'Jour Ferie',
+    url: '/holiday',
+    icon: 'icon-puzzle'
   }
 ];

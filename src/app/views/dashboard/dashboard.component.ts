@@ -7,6 +7,8 @@ import { StageService } from '../../controller/service/stage.service';
 import { DemandeCongeService } from '../../controller/service/demande-conge.service';
 import { TacheService } from '../../controller/service/tache.service';
 import { Tache } from '../../controller/model/tache.model';
+import { HolidayService } from '../../controller/service/holiday.service';
+import { Holiday } from '../../controller/model/holiday';
 
 @Component({
   templateUrl: 'dashboard.component.html',
@@ -390,7 +392,7 @@ export class DashboardComponent implements OnInit {
   }
 
   constructor(private stagiaireService:StagiaireService,private employeeService:EmployeeService,private stageService:StageService,private demandeCongeService:DemandeCongeService,
-    private tacheService:TacheService,){
+    private tacheService:TacheService,private holidayService:HolidayService ){
 
   }
 
@@ -427,6 +429,7 @@ export class DashboardComponent implements OnInit {
     }
     this.tacheService.getUser();
     this.tacheService.getAll();
+    this.holidayService.getAll();
     
   }
 
@@ -436,6 +439,10 @@ export class DashboardComponent implements OnInit {
 
   get tache(){
     return this.tacheService.tache
+  }
+
+  get holidays(): Array<Holiday>{
+    return this.holidayService.holidays;
   }
 
   public save() {

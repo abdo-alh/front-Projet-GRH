@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-header">
+        <strong>Créer un Jour </strong>
+    </div>
+    <div class="card-body">
+        <form #holidayForm="ngForm" (ngSubmit)="save(holidayForm.value)">
+            <div class="form-group">
+                <label for="libelle">Nom</label>
+                <input type="text" #holidayName="ngModel" name="holidayName" [(ngModel)]="holiday.holidayName" class="form-control" 
+                id="holidayName" placeholder="Entrer Le nom " required >
+            </div>
+            <div class="form-group">
+                <label for="libelle">Date Debut</label>
+                <input type="date" #fromDate="ngModel" name="fromDate" [(ngModel)]="holiday.fromDate" class="form-control" 
+                id="fromDate" placeholder="Entrer date de debut  " required >
+            </div>
+            <div class="form-group">
+                <label for="libelle">Date Fin</label>
+                <input type="date" #toDate="ngModel" name="toDate" [(ngModel)]="holiday.toDate" class="form-control" 
+                id="toDate" placeholder="Entrer Le nom " required >
+            </div>
+            <div class="form-group">
+                <label for="numberjour">nombre des jours</label>
+                <input type="number"  #numberDay="ngModel" name="numberjour" [(ngModel)]="holiday.numberDay" class="form-control" id="numberjour" placeholder="Entrer Les jours de conge" required>
+            </div>
+            <div class="card-footer">
+                <button type="submit" [disabled]="!holidayForm.valid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o" ></i> Save</button>
+                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+            </div>
+        </form>
+    </div>
+</div>

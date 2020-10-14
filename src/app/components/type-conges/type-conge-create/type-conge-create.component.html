@@ -11,7 +11,7 @@
             </div>
             <div class="form-group">
                 <label for="numberjour">nombre des jours</label>
-                <input type="number"  name="numberjour" [(ngModel)]="typeConge.numberJour" class="form-control" id="numberjour" placeholder="Entrer Les jours de conge" required>
+                <input type="number" #numberJour="ngModel" name="numberjour" [(ngModel)]="typeConge.numberJour" class="form-control" id="numberjour" placeholder="Entrer Les jours de conge" required>
             </div>
             <div class="card-footer">
                 <button type="submit" [disabled]="!typeCongeForm.valid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o" ></i> Save</button>

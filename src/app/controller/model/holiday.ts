@@ -1,10 +1,10 @@
 export class Holiday {
 
-    holiday_name:String;
-    from_date:Date;
-    to_date:Date;
-    number_of_days:number;
-    year:number;
+    id:number;
+    holidayName:string;
+    fromDate:Date;
+    toDate:Date;
+    numberDay:number;
 
     public constructor(){
         
