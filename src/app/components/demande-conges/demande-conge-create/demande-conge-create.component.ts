@@ -73,26 +73,32 @@ export class DemandeCongeCreateComponent implements OnInit {
   ------------------------------------------------------------------------*/
 
   toggle() {
-    if (this.div2 == true && this.demandeConge.typeConge.libelle == 'maladie') {
+    if (this.div2 == true && this.demandeConge.typeConge.libelle == 'maladie' && this.div3 == true && this.div4 == true) {
 
       this.div2 = false;
       this.div5 = true;
-      //console.log(this.show);
+    console.log('good1');
     }
-    else if (this.div2 == false && this.div2 == false && this.div1 == false && this.div3 == false && this.div4 == false) {
+    else if( this.div1 == true && this.div2 == true && this.demandeConge.typeConge.libelle != 'maladie' ){
       this.div1 = true;
       this.div3 = true;
       this.div4 = true;
       this.div2 = false;
-
     }
-    else if (this.div1 == true && this.div2 == true) {
+    else if (this.div2 == false && this.div1 == true && this.div3 == false && this.div4 == false ) {
       this.div1 = true;
       this.div3 = true;
       this.div4 = true;
       this.div2 = false;
-      this.div5 = false;
-
+      console.log('good2');
+    }
+    else if (this.div1 == true && this.div2 == true && this.div3 == false && this.div4 == false && this.demandeConge.typeConge.libelle == 'maladie') {
+      this.div1 = true;
+      this.div3 = true;
+      this.div4 = true;
+      this.div2 = false;
+      this.div5 = true;
+      console.log('good3');
     }
 
   }
@@ -110,7 +116,6 @@ export class DemandeCongeCreateComponent implements OnInit {
       this.div4 = false;
       this.div2 = false;
       this.div5 = false;
-
     }
 
   }
