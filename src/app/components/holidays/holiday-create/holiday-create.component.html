@@ -19,10 +19,6 @@
                 <input type="date" #toDate="ngModel" name="toDate" [(ngModel)]="holiday.toDate" class="form-control" 
                 id="toDate" placeholder="Entrer Le nom " required >
             </div>
-            <div class="form-group">
-                <label for="numberjour">nombre des jours</label>
-                <input type="number"  #numberDay="ngModel" name="numberjour" [(ngModel)]="holiday.numberDay" class="form-control" id="numberjour" placeholder="Entrer Les jours de conge" required>
-            </div>
             <div class="card-footer">
                 <button type="submit" [disabled]="!holidayForm.valid" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o" ></i> Save</button>
                 <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
