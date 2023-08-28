@@ -7,6 +7,7 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <th>Id</th>
                         <th>Raison</th>
                         <th>Etat</th>
                         <th>Encadrant</th>
@@ -15,12 +16,15 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let s of stages; let i = index">
+                        <td>#{{ s.id }}</td>
                         <td>{{ s.raison }}</td>
                         <td>{{ s.etat }}</td>
                         <td>{{ s.encadrent.nom }} {{ s.encadrent.prenom }}</td>
                         <td>
-                            <button class="btn btn-success btn-xs fa fa-info" (click)="find(i)"></button>
-                            <button class="btn btn-success btn-xs fa fa-trash" (click)="delete(i)"></button>
+                            <button class="btn btn-sm btn-warning mr-2" (click)="open(content,s)"><i
+                                    class="fa fa-pencil"></i></button>
+                            <button class="btn btn-sm btn-danger" (click)="delete(s,i)"><i
+                                    class="fa fa-trash"></i></button>
                         </td>
                     </tr>
                 </tbody>
@@ -31,10 +35,59 @@
                     <a class="page-link" href="#">1</a>
                 </li>
                 <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
                 <li class="page-item"><a class="page-link" href="#">Next</a></li>
             </ul>
         </div>
     </div>
 </div>
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Modifier Stage</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form #stageForm="ngForm" (ngSubmit)="save()">
+            <div class="form-group">
+                <label for="raison">Raison</label>
+                <select name="raison" id="raison" [(ngModel)]="stage.raison" class="form-control"
+                    #mySelect (change)='onOptionsSelected(mySelect.value)' required>
+                    <option value="">Sélectionnez...</option>
+                    <option *ngFor="let r of raisons;" [ngValue]="r.libelle">
+                        {{ r.libelle }}
+                    </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="etat">Etat</label>
+                <select name="etat" id="etat" [(ngModel)]="stage.etat" class="form-control" #mySelect
+                    (change)='onOptionsSelected(mySelect.value)' required>
+                    <option value="">Sélectionnez...</option>
+                    <option *ngFor="let r of etats;" [ngValue]="r.libelle">
+                        {{ r.libelle }}
+                    </option>
+                </select>
+            </div>
+            <!-- <div class="form-group">
+                <label for="encadrant">Encadrant</label>
+                <input type="text" [(ngModel)]="stage.encadrent" class="form-control" id="encadrant" placeholder="Entrer L'encadrant">
+            </div> -->
+            <div class="form-group">
+                <label for="encadrent">Encadrant</label>
+                <select name="encadrent" id="encadrent" [(ngModel)]="stage.encadrent"
+                    class="form-control" #mySelect (change)='onOptionsSelected(mySelect.value)' required>
+                    <option *ngFor="let e of employees;" [ngValue]="e" [selected]="e.id === stage.encadrent.id">
+                        {{ e.nom }} {{ e.prenom }}
+                    </option>
+                </select>
+            </div>
+            <div class="card-footer">
+                <button type="submit" [disabled]="!stageForm.valid" class="btn btn-sm btn-primary"><i
+                        class="fa fa-dot-circle-o"></i>
+                    Save</button>
+                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+            </div>
+        </form>
+    </div>
+</ng-template>

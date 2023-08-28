@@ -50,7 +50,8 @@ export class StageService {
   }
 
   public update() {
-    this.http.put<number>(this.baseUrl + '/update/', this.stageCreate.id).subscribe(data => {
+    const url = `${this.baseUrl}/update/${this.stageCreate.id}`;
+    this.http.put<number>(url,this.stageCreate).subscribe(data => {
       if (data > 0) {
         const index = this.stages.findIndex(p => p.id === this.stageCreate.id);
         this.stages[index] = this.stageCreate;
@@ -62,8 +63,8 @@ export class StageService {
     });
   }
 
-  /*public delete(id, index) {
-    this.http.delete<void>(this.baseUrl + '/delete/id/' + id).subscribe(data => {
+  public deleteStage(stage, index) {
+    this.http.request<void>('delete',this.baseUrl + '/delete/',{body:stage}).subscribe(data => {
       if (data != null) {
         this.stages.splice(index, 1);
       }
@@ -71,7 +72,7 @@ export class StageService {
         console.log('Erreur suppression : ' + data);
       }
     });
-  }*/
+  }
 
   public delete(id:number){
     this.stageCreate.equipeItems.splice(id,1);

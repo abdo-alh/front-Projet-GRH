@@ -22,6 +22,7 @@ import { DesignationsComponent } from './components/designations/designations.co
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { TachesComponent } from './components/taches/taches.component';
 import { HolidaysComponent } from './components/holidays/holidays.component';
+import { StageListComponent } from './components/stage/stage-list/stage-list.component';
 
 export const routes: Routes = [
   {
@@ -51,13 +52,13 @@ export const routes: Routes = [
       title: 'Login Page'
     }
   },
-  //{
-  //  path: 'register',
-  //  component: RegisterComponent,
-  //  data: {
-  //    title: 'Register Page'
-  //  }
-  //},
+  {
+    path: 'register',
+    component: RegisterComponent,
+    data: {
+      title: 'Register Page'
+    }
+  },
   {
     path: '',
     component: DefaultLayoutComponent,
@@ -85,6 +86,10 @@ export const routes: Routes = [
       {
         path: 'stage',
         component: StageComponent
+      },
+      {
+        path: 'stage-list',
+        component: StageListComponent
       },
       {
         path: "attestationEmp",

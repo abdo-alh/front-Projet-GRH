@@ -140,7 +140,7 @@ import { HolidayCreateComponent } from './components/holidays/holiday-create/hol
     TacheCreateComponent,
     TacheListComponent,
     HolidaysComponent,
-    HolidayCreateComponent
+    HolidayCreateComponent,
   ],
   providers: [{
     provide: LocationStrategy,

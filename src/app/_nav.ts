@@ -27,7 +27,18 @@ export const navItems: INavData[] = [
   {
     name: 'Stages',
     url: '/stage',
-    icon: 'icon-puzzle'
+    icon: 'icon-puzzle',
+    children: [
+      {
+        name: 'Ajouter Stage',
+        url: '/stage',
+        icon: 'icon-puzzle'
+      },
+      {
+        name: 'List des stages',
+        url: '/stage-list',
+        icon: 'icon-puzzle'
+      }]
   },
   {
     name: 'Departements',

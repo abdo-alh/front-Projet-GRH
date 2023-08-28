@@ -6,6 +6,7 @@ import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import { StagiaireService } from '../../../controller/service/stagiaire.service';
 import { Stagiaire } from '../../../controller/model/stagiaire';
+import { Router } from '@angular/router';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
@@ -37,7 +38,7 @@ export class StageCreateComponent implements OnInit {
     'libelle':'Terminer'
   }];
 
-  constructor(private stageService: StageService, private employeeService: EmployeeService,private stagiaireService:StagiaireService) { }
+  constructor(private router: Router,private stageService: StageService, private employeeService: EmployeeService,private stagiaireService:StagiaireService) { }
 
   ngOnInit(): void {
     this.getAllEmployees();
@@ -101,6 +102,7 @@ export class StageCreateComponent implements OnInit {
 
   public save() {
     this.stageService.save();
+    this.router.navigate(['/stage-list']);
   }
 
   public onOptionsSelected(value: Employee) {
